@@ -1,0 +1,130 @@
+.wrapper {
+  overflow-x: hidden;
+}
+
+.content .sub1-title {
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.content .sub1-title span {
+  opacity: 0;
+  transition: 0.2s opacity, 0.5s top;
+  position: relative;
+  top: 20px;
+  font-size: 26px;
+}
+
+.items {
+  padding: 0 5vw;
+}
+.items .item {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.text-container .tit {
+  margin-bottom: 30px;
+}
+.text-container .tit .sub {
+  color: #666;
+}
+.text-container .tit .main {
+  font-size: 2.3rem;
+}
+.text-container .desc {
+  margin-bottom: 10px;
+}
+.text-container .desc li {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.text-container .desc li p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.text-container .desc li span {
+  margin-left: 10px;
+}
+.text-container .btn_area {
+  display: flex;
+  flex-wrap: wrap;
+}
+.text-container .btn_area .btn {
+  display: inline-block;
+  font-weight: 700;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 5px 60px 3px;
+  margin: 0 7px 10px 0;
+}
+.text-container .btn_area .btn:hover {
+  background: #000;
+  color: #fff;
+  transition: all 0.1s ease;
+}
+
+.image-container {
+  position: relative;
+  transition: all 0.5s ease;
+}
+.image-container .card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-container img {
+  width: 20vw;
+  margin: 0 1vw;
+}
+.image-container.from_left {
+  left: -999%;
+}
+.image-container.from_right {
+  right: -999%;
+}
+
+.op1 {
+  opacity: 1 !important;
+}
+
+.pt {
+  top: 0 !important;
+}
+
+.pl {
+  left: 0 !important;
+}
+
+.pr {
+  right: 0 !important;
+}
+
+@media screen and (max-width: 720px) {
+  .items .item {
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+    padding-top: 30px;
+  }
+  .image-container img {
+    width: 40vw;
+    margin: 30px 1vw;
+  }
+}/*# sourceMappingURL=sub1.css.map */

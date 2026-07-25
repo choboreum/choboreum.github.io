@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+    
+        <title>CHOBOREUM | 퍼블리싱 가이드</title>
+    
+        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="./css/modules.css" />
+        <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+    
+        <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="./js/guide.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+          <div id="aside"></div>
+
+          <div class="guide-content">
+            <!-- 웹 표준 -->
+            <section class="guide-section">
+              <h2 class="section-title">웹 표준</h2>
+              
+              <h3>마크업 유의사항</h3>
+              <p>마크업 필수 규칙 지키지 않을 경우 화면이 깨져 보이거나 스크립트가 정상적으로 동작하지 못하는 등의 치명적인 오류가 발생할 수 있음</p>
+              <ul class="desc-guide">
+                <li>한글 웹폰트 사용시 12픽셀 이하의 크기에서 글자가 흐려서 잘 보이지 않는 선명도 이슈가 발생하므로 반드시 관련부서와의 충분한 협의를 거친다.</li>
+                <li>DTD 선언 앞에 주석 등의 내용이 없어야 한다.</li>
+                <li><code class="code-label">&lt;head&gt;</code>태그의 안쪽과 <code class="code-label">&lt;body&gt;</code>태그의 안쪽 이외에 내용을 삽입하지 않는다.</li>
+                <li><code class="code-label">&lt;p&gt;</code> 태그 안에는 <code class="code-label">&lt;p&gt;</code>, <code class="code-label">&lt;div&gt;</code>, <code class="code-label">&lt;ul&gt;</code> 등 다른 블럭요소가 들어갈 수 없다. (display:inline 속성을 적용해도 X)<br>
+                  <code class="code-label">&lt;p&gt;</code> 태그는 문단을 구분하는 용도로만 사용하고 영역을 구분하는 용도로 사용하지 말 것.</li>
+                <li><code class="code-label">&lt;a&gt;</code> 태그 안에는 <code class="code-label">&lt;a&gt;</code>태그가 들어갈 수 없다.</li>
+                <li><code class="code-label">&lt;form&gt;</code> 태그 안에는 <code class="code-label">&lt;form&gt;</code>태그가 들어갈 수 없다.</li>
+                <li><code class="code-label">&lt;label&gt;</code> 태그 안에는 <code class="code-label">&lt;label&gt;</code>태그가 들어갈 수 없다.</li>
+                <li><code class="code-label">&lt;pre&gt;</code> 태그 안에는 <code class="code-label">&lt;img&gt;</code>, <code class="code-label">&lt;object&gt;</code>, <code class="code-label">&lt;big&gt;</code>, <code class="code-label">&lt;small&gt;</code>, <code class="code-label">&lt;sub&gt;</code>, <code class="code-label">&lt;sup&gt;</code>태그가 들어갈 수 없다.</li>
+                <li><code class="code-label">&lt;button&gt;</code> 태그 안에는<code class="code-label"> &lt;input&gt;</code>, <code class="code-label">&lt;select&gt;</code>, <code class="code-label">&lt;textarea&gt;</code>, <code class="code-label">&lt;label&gt;</code>, <code class="code-label">&lt;button&gt;</code>, <code class="code-label">&lt;form&gt;</code>, <code class="code-label">&lt;fieldset&gt;</code>, <code class="code-label">&lt;iframe&gt;</code>태그가 들어갈 수 없다.</li>
+                <li><code class="code-label">&lt;button&gt;</code> 폼 값을 전송하는 용도로 사용하지 않을 경우 <code class="code-label">type="button"</code>을 지정</li>
+                <li>태그의 중첩에 유의<br>
+                  <div class="guide-code">
+                    <pre class="language-html">
+    <code class="language-html"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">em</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token tag">strong</span><span class="token punctuation">&gt;</span></span>내용<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">em</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">strong</span><span class="token punctuation">&gt;</span></span> (X)<br>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">em</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token tag">strong</span><span class="token punctuation">&gt;</span></span>내용<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">strong</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">em</span><span class="token punctuation">&gt;</span></span> (O)</code>
+                    </pre>
+                  </div>
+                </li>
+                <li>ID는 페이지에서 한번만 사용할 것 (스타일은 적용되나 책갈피 기능이나 스크립트를 정상적으로 사용할 수 없음)</li>
+              </ul>
+            </section>
+            <!-- //웹 표준 -->
+
+            <!-- 웹접근성 -->
+            <section class="guide-section">
+              <h2 class="section-title">웹접근성</h2>
+
+              <h3>주의점</h3>
+              <ul class="desc-guide">
+                <li>각 페이지를 구분할 수 있는 간단명료한 제목 제공</li>
+                <li><code class="code-label">&lt;img&gt;</code> 요소의 <span class="code-label">alt</span> 속성은 반드시 제공되어야 하며, 의미없는 이미지(=단순 비주얼 요소)에 한하여 빈 값을 허용한다.</li>
+                <li><code class="code-label">&lt;img&gt;</code> 요소의 <span class="code-label">alt</span> 에는 최대 100-125자를 제한으로 하되, 그 이상으로 넘어가게 된다면 sr-only class를 이용해 html태그를 사용하여 대체 텍스트를 작성한다.</li>
+                <li><code class="code-label">&lt;input&gt;</code> 요소는 <code class="code-label">&lt;label&gt;</code>과 연결하거나 <code class="code-label">title</code> 값을 지정하여야 한다.</li>
+                <li>빈 태그 사용시에는 <code class="code-label">area-hidden="true"</code> 속성을 사용하여 스크린리더에서 읽혀지지 않도록 처리한다.</li>
+                <li>분리된 입력폼은 각각 title 값을 지정하여야 한다.</li>
+                <li>적절한 <code class="code-label">&lt;label&gt;</code> 텍스트 또는 <code class="code-label">title</code>를 사용하여야 한다.</li>
+                <li>적절한 태그로 작성이 어려울 경우 <a href="https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA/Attributes">wai-aria</a>를 활용하여 웹접근성을 강화할 수 있다.</li>
+                <li><code class="code-label">&lt;body&gt;</code> 상단에 본문 바로가기 링크를 제공하여야 한다.</li>
+                <li>필요 시 <code class="code-label">tabindex</code>를 사용하며, 키보드 탭키 이동으로 접근이 불가능한 내용이 없어야 한다.</li>
+                <li>전경 콘텐츠와 배경은 4.5:1 이상의 명도 대비를 유지한다.</li>
+                <li>화면을 400% 확대한 상태에서 내용과 기능에 손실이 없어야 하고, 2차원 스크롤이 발생하지 않아야 한다.</li>
+                <li>자동으로 갱신되는 정보에는 '정지, 이전, 다음' 기능을 제공한다.</li>
+                <li>동영상, 음성 등 멀티미디어 콘텐츠를 이해할 수 있도록 대체 수단을 제공해야 한다</li>
+                <li>표에 셀 제목이 명시되지 않은 경우에도 <code class="code-label">&lt;th&gt;</code> 요소를 선언하여 의미에 맞는 제목을 명시한다. (화면에 표시되지 않도록 CSS로 숨김 처리)</li>
+                <li><code class="code-label">&lt;th&gt;</code>에는 scope 애트리뷰트는 반드시 선언하여 현재 셀이 어느 셀의 제목인지 범위를 명시 해야 한다.</li>
+                <li>탭 혹은 아코디언 UI로 인해 숨김텍스트 영역을 이용한다.</li>
+              </ul>
+
+              <h3>role</h3>
+              <p>HTML 요소(Element)의 확장 개념으로 좀 더 명확한 HTML 요소의 구조와 의미를 부여하는 역할을 하는 속성이며, HTML 표준과의 호환성을 유지하면서 기본 동작을 무시하거나, 변경하면 안된다.</p>
+              <p class="txt-guide1">* 참고 : 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role" target="_blank">ARIA guide-eng</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role" target="_blank">ARIA guide-ko</a>
+              </p>
+              
+
+              <h3>관련 사이트</h3>
+              <ul class="desc-guide">
+                <li><a href="https://www.wah.or.kr:444/index.asp" target="_blank">웹접근성 연구소</a></li>
+                <li><a href="https://accessibility.naver.com" target="_blank">NAVER Accessibility</a></li>
+                <li><a href="http://www.kbuwel.or.kr" target="_blank">한국시각장애인연합회</a></li>
+                <li><a href="http://www.webwatch.or.kr" target="_blank">WebWatch</a></li>
+                <li><a href="https://www.wah.or.kr:444/board/boardView.asp?page=3&amp;brd_sn=4&amp;brd_idx=518" target="_blank">웹 접근성 점검 매뉴얼</a></li>
+              </ul>
+            </section>
+            <!-- //웹접근성 -->
+
+            <!-- 크로스 브라우징 -->
+            <section class="guide-section">
+              <h2 class="section-title">크로스 브라우징</h2>
+              <p>다음 목록은 모든 프로젝트에 적용되는 기본 크로스브라우징 범위이며, 프로젝트 별로 범위가 가감될 수 있다.</p>
+              <ul class="desc-guide">
+                <li>크롬</li>
+                <li>엣지</li>
+                <li>파이어폭스</li>
+                <li>사파리</li>
+              </ul>
+              
+              <h3>CSS 핵</h3>
+              <ul class="desc-guide">
+                <li>CSS 핵은 엠지니와 같이 구버전 브라우저(익스플로러)로 보는 예외 케이스에만 사용한다.</li>
+                <li>사용은 최소화 하되, 필요한 경우에만 사용한다.</li>
+              </ul>
+              <div class="guide-code">
+                <pre class="language-css">
+    <code class="language-css"><span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">.height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 닷핵 (.) : IE 6~7 */</span>
+  
+    <span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">_height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 언더스코어 핵 (_) : Win IE 4~6 */</span>
+  
+    <span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">#height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 해시 핵 (#) : IE 5.5~6, Mac IE 5, Opera 7, Mozilla 계열, Firefox */</span>
+  
+    <span class="token css"><span class="token selector">*html div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 스타 핵 : Win IE 4~6, Mac IE 4~5 */</span>
+  
+    <span class="token css"><span class="token selector">html*div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 스타7 핵 : Win IE 5.5~6, Mac IE 5, Safari */</span>
+  
+    <span class="token css"><span class="token selector">html[xmlns] div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* xmlns 속성 핵 : Mozilla, Firefox, Opera, Safari 등 속성 선택자를 지원하는 브라우저 */</span>
+  
+    <span class="token css"><span class="token selector">:root div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* root 가상클래스 핵 : Mozilla, Firefox, Mac IE 5, Safari 등 가상클래스를 지원하는 브라우저 */</span>
+  
+    <span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">height/* \**/</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* IE 8에서만 적용 : IE 8 */</span>
+  
+    <span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">\;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* IE 8을 포함한 IE버젼에서만 적용하기 : Only IE */</span>
+  
+    <span class="token css"><span class="token selector">*+html body div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* IE 7, Opera 적용하기 : IE 7, Opera 8 이후 버전 */</span>
+  
+    <span class="token css"><span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">height/**/</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* IE 6 제외시키기 : Win용 IE 6에서는 적용 제외 */</span>
+  
+    <span class="token css"><span class="token selector">html>body div</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">300px</span><span class="token punctuation">;</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* IE 7, IE 8에 적용하기 : IE 7, IE 8에서만 적용 */</span>
+  
+    <span class="token css"><span class="token rule">@-moz-document</span> <span class="token string">url-prefix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token selector">div</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 파이어폭스만 적용 */</span>
+  
+    <span class="token css"><span class="token rule">@media screen</span> <span class="token string">and</span><span class="token punctuation">(</span><span class="token string">-webkit-min-device-pixel-ratio:0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token selector">div</span><span class="token punctuation">}</span></span>
+    <span class="token comment">/* 크롬만 적용 */</span></code>
+                </pre>
+              </div>
+            </section>
+            <!-- //크로스 브라우징 -->
+
+            <!-- SEO(검색 엔진 최적화) -->
+            <section class="guide-section">
+              <h2 class="section-title">SEO(검색 엔진 최적화)</h2>
+              <p>참고 : <a href="https://static.googleusercontent.com/media/www.google.co.kr/ko/kr/intl/ko/webmasters/docs/search-engine-optimization-starter-guide-ko.pdf" target="_blank">구글 검색엔진 최적화 방법</a></p>
+  
+              <h3>head</h3>
+              <div class="guide-code">
+                <pre class="language-css">
+  <code class="language-css"><span class="token tag"><span class="token punctuation">&lt;</span>head<span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">title</span><span class="token punctuation">&gt;</span></span>CHOBOREUM<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:type</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">website<span class="token punctuation">"</span></span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:title</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">CHOBOREUM<span class="token punctuation">"</span></span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 사이트명 --&gt;</span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:description</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">퍼블리싱 가이드드<span class="token punctuation">"</span></span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 사이트에 대한 설명 --&gt;</span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:keywords</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">정보통신업, 응용 소프트웨어 개발 및 공급업, 제조업, 컴퓨터 제조업<span class="token punctuation">"</span></span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 사이트에 대한 키워드 --&gt;</span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:image</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">./images/layout/logo.png<span class="token punctuation">"</span></span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 사이트 로고 이미지 경로 --&gt;</span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">property</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">og:url</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- [DEV] content 값에 운영서버의 메인페이지 URL 표기 부탁드립니다. --&gt;</span>
+    ...
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span>head<span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+
+              <h3>keywords</h3>
+              <div class="guide-code">
+                <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">name</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">keywords</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+              <ul class="desc-guide">
+                <li>페이지 키워드를 기재/콤마(,)로 구별하여 기술/동의어와 유의어를 포함.</li>
+              </ul>
+      
+              <h3>description</h3>
+              <div class="guide-code">
+                <pre class="language-markup">
+<code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">meta</span> <span class="token attr-name">name</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">description</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+              <ul class="desc-guide">
+                <li>페이지 정보 요약</li>
+                <li>구글검색에서, 결과 페이지 내용 미리보기로 사용할 수도 있음.</li>
+              </ul>
+      
+              <h3>title / header</h3>
+              <ul class="desc-guide">
+                <li>각각의 페이지마다 고유한 title 제공. 필요 시 헤딩 태그의 활용</li>
+                <li>가능한 header의 로고는 단순 링크 <code class="code-label">&lt;a&gt;</code> 태그 활용, 페이지 타이틀을 <code class="code-label">&lt;h1&gt;</code>으로 정의 : 검색 우선 순위를 위함</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

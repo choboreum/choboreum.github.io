@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Ofr.Paris</title>
+
+<link rel="shortcut icon"  type="image/x-icon"  href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="app_icon.png">
+<link rel="apple-touch-startup-image" href="startup.png">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/layout.css">
+<!-- jquery.fancybox  -->
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<!-- animate -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="css/main.css">
+<!-- media-queries -->
+<link rel="stylesheet" href="css/media-queries.css">
+
+<script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
+<!-- Modernizer Script for old Browsers -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery-migrate-1.4.1.min.js"></script>
+<script>
+	// <![CDATA[
+		try {
+			window.addEventListener('load', function(){
+	    	    setTimeout(scrollTo, 0, 0, 1); 
+	    	}, false);
+		} catch(e) {}
+	// ]]>
+</script>
+<!--[if lt IE 9]> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body id="body">
+   <div class="container-fluid">
+       <div id="preloader">
+			<img src="images/preloader.gif" alt="Preloader">
+		</div>
+		<!-- end preloader -->
+
+        <!-- Fixed Navigation -->
+        <header id="navigation" class="navbar-fixed-top navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <h1 id="logo">
+                        <a class="navbar-brand" href="#body">ofr bookshop logo</a>
+                    </h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body">Home</a></li>
+                        <li><a href="#art">Art</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#exhitions">Exhibitions</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+        <!-- End Fixed Navigation -->
+		
+		
+		
+        <!-- Home Slider -->
+		<section id="slider">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			
+				<!-- Indicators bullet -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				</ol>
+				<!-- End Indicators bullet -->				
+				
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+					<!-- single slide -->
+					<div class="item active" style="background-image: url(images/main.jpg);">
+                    <div class="scrolldown">
+                        <a id="scroll" href="#art" class="scroll"><span class="icon-scroll"></span></a>
+                    </div>
+					</div>
+					<!-- end single slide -->
+					
+					<!-- single slide -->
+					<div class="item" style="background-image: url(images/main2.jpg);">
+					<div class="scrolldown">
+                        <a id="scroll" href="#art" class="scroll"><span class="icon-scroll"></span></a>
+                    </div>	
+					</div>
+					<!-- end single slide -->
+					
+				</div>
+				<!-- End Wrapper for slides -->
+				
+			</div>
+		</section>
+        <!-- End Home SliderEnd -->
+		
+        <!-- art -->
+		<section id="art" class="art">
+			<div class="container">
+				<div class="row">
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>Art</h2>
+						<div class="devider"><i class="fas fa-brush fa-lg"></i></div>
+					</div>
+
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fas fa-film fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>0fr. films</h3>
+								<p>0fr. films present a 33 minutes movie shot in a week : no route, no appointments, no preparation, just luck &amp; love. Editing supervised by Melinda Triana</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fas fa-book fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Book</h3>
+								<p>This independent Parisian bookshop has a refined selection of articles in the fields of fashion, design, photography, architecture and other art books and magazines.</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fas fa-magic fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Publishing</h3>
+								<p>A print publication on the culture and life in the suburbs. After having looked at Paris and London suburbs, this latest edition explores the city of Berlin and its periphery, hosted by the bookshop 0fr in Paris.</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+						
+				</div>
+			</div>
+		</section>
+		
+        <!-- End art -->
+		
+		
+        <!-- gallery -->
+		<section id="gallery" class="gallery clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="sec-title text-center">
+						<h2>Gallery</h2>
+						<div class="devider"><i class="fa fa-images fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center">
+						<p>This independent Parisian bookshop has a refined selection of articles <br>in the fields of fashion, design, photography, architecture and other art books and magazines.</p>
+					</div>
+					
+					<div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
+						<ul class="text-center">
+							<li><a href="javascript:;" data-filter="all" class="active filter">All</a></li>
+							<li><a href="javascript:;" data-filter=".fashion" class="filter">Fashion</a></li>
+							<li><a href="javascript:;" data-filter=".design" class="filter">Design</a></li>
+							<li><a href="javascript:;" data-filter=".art-book" class="filter">Art Book</a></li>
+							<li><a href="javascript:;" data-filter=".photography" class="filter">Photography</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="project-wrapper">
+			
+				<figure class="mix work-item fashion">
+					<img src="images/fashion1.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="The celebration of Arcades third issue" href="images/fashion1-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>The celebration of Arcades third issue</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item design">
+					<img src="images/design1.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="Poster art and graphic design" href="images/design1-1.JPG"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>Poster art and graphic design</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item art-book">
+					<img src="images/book1.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="OFR Bookshop — Paris" href="images/book1-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>OFR Bookshop — Paris</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item photography">
+					<img src="images/photo1.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="1993, parisfashionweek" href="images/photo1-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>1993, parisfashionweek</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+			
+				<figure class="mix work-item fashion">
+					<img src="images/fashion2.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="Ofr style vintage warmjacket" href="images/fashion2-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>Ofr style vintage warmjacket</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item design">
+					<img src="images/design2.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="Art and display design around book" href="images/design2-1.JPG"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>Art and display design around book</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item art-book">
+					<img src="images/book2.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="OFR Bookshop — Paris" href="images/book2-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>OFR Bookshop — Paris</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="mix work-item photography">
+					<img src="images/photo2.jpg" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="City Guide: Paris" href="images/photo2-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+						<h4>City Guide: Paris</h4>
+						<p>Photography</p>
+					</figcaption>
+				</figure>
+				
+			</div>
+		
+
+		</section>
+		
+        <!-- End gallery -->
+		
+        <!-- exhitions -->		
+		
+		<section id="exhitions" class="exhitions">
+			<div class="container">
+				<div class="row">
+		
+					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+						<h2>exhitions</h2>
+						<div class="devider"><i class="fas fa-scroll fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+						<p>They offer artsy post cards, limited edition fanzines and fashion accessories. <br>There is a 60m2 gallery in the back which often holds events, must-see exhibitions, and private sales.</p>
+					</div>
+
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="images/ex1.jpg" alt="" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>ALEX FOXTON</h5>
+								<p>Whistle and I’ll Come to You/ Galerie Derouillon - PRIME sector Solo show</p>
+								<ul class="social-links text-center">
+									<li><a href="https://www.galeriederouillon.com/ALEX-FOXTON"><i class="fas fa-globe fa-lg"></i></a></li>
+									<li><a href="https://www.instagram.com/p/CFxhQ4TKQ5l/?utm_source=ig_web_copy_link"><i class="fab fa-instagram fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>ALEX FOXTON</h4>
+						<span>20.04.23~20.04.26</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="member-thumb">
+							<img src="images/ex2.jpg" alt="" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Romain Staros</h5>
+								<p>Exposition des photos et signature du livre de Romain Staros "DETROIT" en partenariat avec</p>
+								<ul class="social-links text-center">
+									<li><a href="https://www.staros.fr/"><i class="fas fa-globe fa-lg"></i></a></li>
+									<li><a href="https://www.facebook.com/events/2325071064411053"><i class="fa fa-facebook fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Romain Staros</h4>
+						<span>19.09.12</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="member-thumb">
+							<img src="images/ex3.jpg" alt="" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Olivier Theyskens</h5>
+								<p>Signature du livre "In proesentia", catalogue de l exposition</p>
+								<ul class="social-links text-center">
+									<li><a href="https://www.oliviertheyskens.com/"><i class="fa fa-globe fa-lg"></i></a></li>
+									<li><a href="https://www.facebook.com/events/419885895265711"><i class="fa fa-facebook fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Olivier Theyskens</h4>
+						<span>19.06.30</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="member-thumb">
+							<img src="images/ex4.jpg" alt="" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>Julien Langendorff</h5>
+								<p>Signature et exposition de Julien Langendorff chez 0fr du 5 au 15 octobre 2019</p>
+								<ul class="social-links text-center">
+									<li><a href="https://julienlangendorff.com/"><i class="fas fa-globe fa-lg"></i></a></li>
+									<li><a href="https://www.facebook.com/events/781991028912545"><i class="fa fa-facebook fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Julien Langendorff</h4>
+						<span>19.10.06~19.10.16</span>
+					</figure>
+					<!-- end single member -->
+					
+				</div>
+			</div>
+		</section>
+		
+        <!-- End exhitions -->
+		
+		
+		<!-- Contact Us -->		
+		
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="row mb50">
+				
+					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+						<h2>Let’s Discuss</h2>
+						<div class="devider"><i class="fas fa-edit fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+						<p>If you have any questions or concerns about Ofr Bookstore, please let us know!</p>
+					</div>
+					
+					<!-- contact address -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+						<div class="contact-address">
+							<h3>Nord Marais <br>Paris, France</h3>
+							<p>20 Rue Dupetit-Thouars,</p>
+							<p>75003 Paris, France</p>
+							<p>10:00 - 20:00</p>
+						</div>
+					</div>
+					<!-- end contact address -->
+					
+					<!-- contact form -->
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="contact-form">
+							<h3>Send feedback</h3>
+							<form action="#" id="contact-form">
+								<div class="input-group name-email">
+									<div class="input-field">
+										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+									</div>
+									<div class="input-field">
+										<input type="email" name="email" id="email" placeholder="Email" class="form-control">
+									</div>
+								</div>
+								<div class="input-group">
+									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+								</div>
+								<div class="input-group">
+									<input type="submit" id="form-submit" class="pull-right" value="Send message">
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end contact form -->
+					
+					<!-- footer social links -->
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<ul class="footer-social">
+							<li><a href="https://www.instagram.com/ofrparis/?hl=ko"><i class="fab fa-instagram fa-2x"></i></a></li>
+							<li><a href="https://www.facebook.com/0fr-238409536196250"><i class="fa fa-facebook fa-2x"></i></a></li>
+							<li><a href="https://onthegrid.city/paris/nord-marais/ofr"><i class="fa fa-dribbble fa-2x"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCxaU-UZe0FLbr0J50w00Y8Q"><i class="fab fa-youtube fa-2x"></i></a></li>
+						</ul>
+					</div>
+					<!-- end footer social links -->
+
+				</div>
+			</div>			
+		</section>
+		
+        <!-- End Contact Us -->
+
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single">
+							<a href="index.html" class="logo">ofr bookshop logo</a>
+							<p>OFR: a bookshop-cum-gallery that houses an extensive collection of multilingual art and design books and fashion magazines. </p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="footer-single">
+							<h6>Subscribe </h6>
+							<form action="#" class="subscribe">
+								<input type="text" name="subscribe" id="subscribe">
+								<input type="submit" value="&#8594;" id="subs">
+							</form>
+							<p>Subscribe to get latest news article and resources</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-6 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single">
+							<h6>Explore</h6>
+							<ul>
+								<li><a href="index.html">Inside Us</a></li>
+								<li><a href="https://www.facebook.com/0fr-238409536196250">Facebook</a></li>
+								<li><a href="https://www.instagram.com/ofrparis/?hl=ko">Instagram</a></li>
+								<li><a href="https://www.google.com/">Google</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-6 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="footer-single">
+							<h6>Support</h6>
+							<ul>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Market Blog</a></li>
+								<li><a href="#">Help Center</a></li>
+								<li><a href="#">Pressroom</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright text-center">Copyright © 2020 BOREUM. All rights reserved. Designed &amp; developed by BOREUM</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+   </div>
+   
+<script src="js/bootstrap.min.js"></script>
+<!-- Single Page Nav -->
+<script src="js/jquery.singlePageNav.min.js"></script>
+<!-- Twitter Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jquery.fancybox.pack -->
+<script src="js/jquery.fancybox.pack.js"></script>
+<!-- jquery.mixitup.min -->
+<script src="js/jquery.mixitup.min.js"></script>
+<!-- jquery.parallax -->
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<!-- jquery.countTo -->
+<script src="js/jquery-countTo.js"></script>
+<!-- jquery.appear -->
+<script src="js/jquery.appear.js"></script>
+<!-- Contact form validation -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+<!-- jquery easing -->
+<script src="js/jquery.easing.min.js"></script>
+<!-- jquery easing -->
+<script src="js/wow.min.js"></script>
+<script>
+    var wow = new WOW ({
+        boxClass:     'wow',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset:       120,          // distance to the element when triggering the animation (default is 0)
+        mobile:       false,       // trigger animations on mobile devices (default is true)
+        live:         true        // act on asynchronously loaded content (default is true)
+      }
+    );
+    wow.init();
+</script> 
+<!-- Custom Functions -->
+<script src="js/custom.js"></script>
+<script type="text/javascript">
+    $(function(){
+        /* ========================================================================= */
+        /*	Contact Form
+        /* ========================================================================= */
+
+        $('#contact-form').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                message: {
+                    required: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "come on, you have a name don't you?",
+                    minlength: "your name must consist of at least 2 characters"
+                },
+                email: {
+                    required: "no email, no message"
+                },
+                message: {
+                    required: "um...yea, you have to write something to send this form.",
+                    minlength: "thats all? really?"
+                }
+            },
+            submitHandler: function(form) {
+                $(form).ajaxSubmit({
+                    type:"POST",
+                    data: $(form).serialize(),
+                    url:"process.php",
+                    success: function() {
+                        $('#contact-form :input').attr('disabled', 'disabled');
+                        $('#contact-form').fadeTo( "slow", 0.15, function() {
+                            $(this).find(':input').attr('disabled', 'disabled');
+                            $(this).find('label').css('cursor','default');
+                            $('#success').fadeIn();
+                        });
+                    },
+                    error: function() {
+                        $('#contact-form').fadeTo( "slow", 0.15, function() {
+                            $('#error').fadeIn();
+                        });
+                    }
+                });
+            }
+        });
+    });
+</script>   
+<script>
+    $('.scroll').click(function(){
+          screenHeight = $(window).height();
+          $('html,body').animate({'scrollTop':screenHeight}, 1000);
+    });
+</script>
+</body>
+</html>

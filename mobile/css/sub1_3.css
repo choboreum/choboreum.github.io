@@ -1,0 +1,19 @@
+#content .title_area{margin-top: 77px; color: #fff; background: rgb(150,180,95); padding: 20px 0}
+#content .title_area h2{font-size: 20px; font-weight: 700; text-align: center}
+
+#content .content_area{margin: 30px 5% 100px; line-height: 1.5em}
+#content .content_area>p{margin-bottom: 40px; font-family: 'Nanum Myeongjo', serif; text-align: center}
+
+#content .content_area{margin: 30px 5% 100px; line-height: 1.5em; overflow: hidden}
+
+#content .content_area .history{clear: both}
+#content .content_area .history dt{font-size: 18px; font-weight: 700; color: #666; margin-top: 15px}
+#content .content_area .history dt:first-of-type{margin-top: 0}
+#content .content_area .history dd{text-indent: 25px}
+
+#content .content_area .tabs{overflow: hidden; margin-bottom: 50px}
+#content .content_area .tabs a{float: left;width: 33.33%; position: relative; font-size: 16px; font-family: 'Nanum Gothic', sans-serif; font-weight: 700; color: #666; text-align: center}
+#content .content_area .tabs a::after{content: ''; display: block; background: #666; height: 4px; width: 4px; border-radius: 2px; position: absolute; top: 10px}
+#content .content_area .tabs a:first-of-type::after{display: none}
+
+#content .content_area .tabs .active{color: rgb(150,180,95); font-weight: 700}

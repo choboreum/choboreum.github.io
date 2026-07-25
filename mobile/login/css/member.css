@@ -1,0 +1,45 @@
+body{background-color: #f5f5ee; color: #776}
+.hidden{display: block; position: absolute; z-index: 10; left: -1000%; width: 1px; height: 1px; overflow: hidden; color: #fff}
+a{text-decoration: none; color: #776}
+p{text-align: center}
+
+#wrap{margin: 40px 0; width: 100%}
+#wrap a.logo{width: 120px; height: 110px; background: url(../../images/logo_x1.png) no-repeat; text-indent: -999%; margin: 0 0 40px -60px; position: relative; top: 0; left: 50%; padding: 0}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #wrap a.logo{background: url(../../images/logo_x2.png); background-size: 120px 110px}
+}
+
+#title{text-align: center}
+
+fieldset{width: 90%; margin: 0 5%; border: none}
+input{border: none; display: block; margin: 20px 0; width: 95%; height: 60px; background-color: #eed; border-radius: 3px; outline: none}
+
+.login_input{padding-left: 5%}
+.signup,.go_join, .find{display: block; width: 100%; background-color: #aa9; color: #ffe; text-align: center; transition: all .5s}
+.signup, .find{height: 60px; margin-bottom: 10px; cursor: pointer}
+.go_join{line-height: 40px; margin: 30px auto; border-radius: 3px}
+.signup:hover,.go_join:hover, .find:hover{background: rgb(150,180,95)}
+
+ul{list-style: none; overflow: hidden; width: 90%; margin: 0 auto; padding: 0}
+ul li{margin: 20px auto; overflow: hidden; float: left; text-align: center}
+ul li:last-child{float: right}
+#wrap ul li span a{margin-left: 20px; float: left; color: #777}
+ul li i{margin-right: 8px}
+
+#join_button{position: relative; margin: 30px 5% 0; width: 90%; padding-top: 30px}
+#join_button::before{content: ''; width: 100%; height: 1px; background: #ccc; position: absolute; top: -20px; left: 50%; margin-left: -50%}    
+#wrap a{color: #fff}
+
+/*find*/
+.idform input:first-child,#id_input_button .pwfind{width: 95%; padding-left: 5%}
+.telBox {clear: both;margin: -20px 0}
+.telBox select {width: 29.5%; border: 0px; color: #777; background: #eed; height: 60px;padding-left: 5%}
+.telBox input{width: 29.5%; display: inline}
+
+#id_input_button .go li{margin: 20px 0; width: auto}
+#id_input_button .go li span{float: left}
+#id_input_button .go li a{color: #777; float: right}
+#id_input_button .go li:last-of-type a{margin-left: 10px}
+
+.loadtexton{text-align: center; border: 1px dashed #ccc; width: 500px; overflow: hidden; margin: 20px 0 20px -250px; position: relative; left: 50%; border-radius: 10px; display: block; padding: 20px 0; line-height: 1.5em}
+.loadtexton strong:first-of-type{line-height: 2em}

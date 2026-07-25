@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>CHOBOREUM | 퍼블리싱 가이드</title>
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modules.css" />
+    <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/guide.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="aside"></div>
+
+      <div class="guide-content">
+        <!-- 개정이력 -->
+        <section class="guide-section">
+          <h2 class="section-title">개정이력</h2>
+
+          <div class="table-wrap">
+            <table class="table vertical">
+              <colgroup>
+                <col style="width: 25%" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="col">날짜</th>
+                  <th class="col">내용</th>
+                  <th class="col">작성자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024.12.06</td>
+                  <td>초안</td>
+                  <td>조보름</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 기본정책 -->
+        <section class="guide-section">
+          <h2 class="section-title">기본정책</h2>
+
+          <div class="table-wrap">
+            <table class="table horizontal">
+              <colgroup>
+                <col style="width: 25%" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">문서 및 버전</th>
+                  <td>HTML, JSP, CSS, JavaScript, Jquery</td>
+                </tr>
+                <tr>
+                  <th class="row">인코딩</th>
+                  <td>UTF-8</td>
+                </tr>
+                <tr>
+                  <th class="row">웹 유형</th>
+                  <td>PC, Mobile, Responsive</td>
+                </tr>
+                <tr>
+                  <th class="row">크로스 브라우징</th>
+                  <td>Chrome, Firefox, Edge</td>
+                </tr>
+                <tr>
+                  <th class="row">해상도 기준</th>
+                  <td>PC 1920px , MO 360px<br>
+                    모바일 화면을 확인 할 경우 최소 320~최대 768까지 대응한다.
+                    PC화면을 확인 할 경우 최소 1200~최대 1920까지 대응한다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 네이밍 규칙 -->
+        <section class="guide-section">
+          <h2 class="section-title">네이밍 규칙</h2>
+
+          <h3>표기법</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>표기법</caption>
+              <colgroup>
+                <col style="width: 15%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">종류</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">번호</th>
+                  <th scope="col">예시</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ID Selector</td>
+                  <td>카멜 표기법</td>
+                  <td>한 자리수 (생략 가능, 2, 3)</td>
+                  <td>errorMessage, controlCenter, controlCenter2</td>
+                </tr>
+                <tr>
+                  <td>Class Selector</td>
+                  <td>케밥 표기법</td>
+                  <td>두 자리수 (생략 가능, 02, 03)</td>
+                  <td>button-primary, button-outline, button-outline02</td>
+                </tr>
+                <tr>
+                  <td>Image</td>
+                  <td>스네이크 표기법</td>
+                  <td>두 자리수 (01, 02, 03)</td>
+                  <td>button_icon01.svg, button_icon02.svg, button_icon03.svg</td>
+                </tr>
+                <tr>
+                  <td>파일 및 폴더</td>
+                  <td>스네이크 표기법</td>
+                  <td>두 자리수 (01, 02, 03)</td>
+                  <td>admin_page</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>공통 네이밍 규칙 예</h4>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>공통 네이밍 규칙 예</caption>
+              <colgroup>
+                <col style="width: 60%" />
+                <col span="2" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="col">설명</th>
+                  <th class="col">잘못된 예</th>
+                  <th class="col">올바른 예</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>시작이름은 영문 대문자, 숫자, 특수문자로 시작할 수 없다.(파일 및 폴더 제외)</td>
+                  <td class="red">Tit_pop.html<br>*-hidden-obj<br>03_btn_more.gif</td>
+                  <td class="blue">tit-section</td>
+                </tr>
+                <tr>
+                  <td>네이밍의 조합은 <em>'유형_속성_순서_상태'</em>을 기본 순서로 사용한다.</td>
+                  <td class="red">cancle_btn_off_01.gif</td>
+                  <td class="blue">btn_cancle_01_off.gif</td>
+                </tr>
+                <tr>
+                  <td>언더바(_) 조합 : <em>파일, 폴더, 이미지</em>에 사용한다.<br>HTML 문서 안에서 언더바(_)의 조합은 form, input 엘리먼트등의 <em>name 속성</em>의 값을 사용하는 것을 권장한다.</td>
+                  <td class="red">customerService</td>
+                  <td class="blue">customer_service</td>
+                </tr>
+                <tr>
+                  <td>하이픈(-) 조합 : <em>CSS 클래스</em>에 사용하는 것을 권장한다.</td>
+                  <td class="red">obj_hidden</td>
+                  <td class="blue">obj-hidden</td>
+                </tr>
+                <tr>
+                  <td><em>파일 및 폴더</em>의 경우 1, 2과 같은 한자리 정수는 사용하지 않으며 01, 02과 같이 사용하며 사용을 권장한다.<br>대부분의 파일관리 유틸리티 프로그램들을 사용하여 파일의 이름으로 정렬할 때에 정렬의 순서를 보장하기 위함이다.</td>
+                  <td class="red">cyber_center_1<br>cyber_center_2</td>
+                  <td class="blue">cyber_center_01<br>cyber_center_02</td>
+                </tr>
+                <tr>
+                  <td>동일한 이름의 css 네이밍의 경우 가장 뒤에 숫자를 사용하여 분류지어 사용할 수 있으며(두자리 정수), <em>첫번째 파일은 숫자를 생략</em>하여 사용할 수 있다.</td>
+                  <td class="red">box-type1<br>box-type2<br>box-type3</td>
+                  <td class="blue">box-type<br>box-type02<br>box-type03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 파일 및 폴더 -->
+        <section class="guide-section">
+          <h2 class="section-title">파일 및 폴더</h2>
+          <p>개발과 기획에서 정의된 디렉토리 구조도 및 화면 아이디가 정의가 되어있다면 그에 준한 규칙에 따라 파일 및 폴더의 이름을 사용한다.</p>
+
+          <h4>파일 및 폴더 네이밍 규칙 예</h4>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>파일 및 폴더 네이밍 규칙 예</caption>
+              <colgroup>
+                <col span="3" style="width: 15%" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">폴더</th>
+                  <th scope="col">파일</th>
+                  <th scope="col">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>jsp</td>
+                  <td>각 페이지별 개별 폴더</td>
+                  <td>.jsp</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="4" colspan="2">css</td>
+                  <td>reset.css</td>
+                  <td>css 초기화</td>
+                </tr>
+                <tr>
+                  <td>layout.css</td>
+                  <td>header, footer, form, popup(modal/ bottomsheet ...) 등 공통 style</td>
+                </tr>
+                <tr>
+                  <td>modules.css</td>
+                  <td>btn, tab, icon, bg 등 공통 style</td>
+                </tr>
+                <tr>
+                  <td>contents.css</td>
+                  <td>서브페이지 관련 css</td>
+                </tr>
+                <tr>
+                  <td colspan="2">fonts</td>
+                  <td>.eot / .woff / .ttp / .otp</td>
+                  <td>웹폰트 관련 파일</td>
+                </tr>
+                <tr>
+                  <td>imges</td>
+                  <td>각 페이지별 개별 폴더</td>
+                  <td>.png / .jpg / .gif</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">jscript</td>
+                  <td rowspan="2">jquery</td>
+                  <td>main.js</td>
+                  <td>메인에 사용되는 스크립트</td>
+                </tr>
+                <tr>
+                  <td>ui.js</td>
+                  <td>레이아웃 및 공통으로 사용되는 스크립트</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 인코딩 -->
+        <section class="guide-section">
+          <h2 class="section-title">인코딩</h2>
+          <p>*.html, *.css, *.js의 파일의 저장 방식을 UTF-8로 설정한다. 반드시 개발과 협의가 필요하다.</p>
+
+          <div class="table-wrap mt15">
+            <table class="table vertical">
+              <caption>문자셋(charset)별 인코딩</caption>
+              <thead>
+                <tr>
+                  <th scope="col">문자셋(charset)</th>
+                  <th scope="col">기본 인코딩</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>charset=utf-8</td>
+                  <td>utf-8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>

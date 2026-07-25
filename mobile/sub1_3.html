@@ -1,0 +1,134 @@
+<?
+	session_start(); 
+    @extract($_POST);
+    @extract($_GET);
+    @extract($_SESSION);    
+?>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+
+<title>서대문자연사박물관 Mobile Web</title>
+
+<link rel="apple-touch-icon-precomposed" href="app_icon.png">
+<link rel="apple-touch-startup-image" href="startup_x1.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/sub1_3.css">
+
+<link rel="stylesheet" href="css/swiper.min.css">
+
+<script src="js/prefixfree.min.js"></script>
+
+<script>
+  // <![CDATA[
+  try {
+   window.addEventListener('load', function(){
+    setTimeout(scrollTo, 0, 0, 1); 
+   }, false);
+  } 
+  catch(e) {}
+  // ]]>
+ </script>
+ <script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
+ <!--[if lt IE 9]> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <? include "head.html" ?>
+
+    <article id="content">
+        <div class="title_area">
+           <h3 class="hidden">기관소개</h3>
+           <h2>연혁</h2>
+        </div>
+
+        <div class="content_area">
+           <div class="tabs">
+			   <a href="#" class="active">1997-2000</a>
+			   <a href="#">2001-2010</a>
+		       <a href="#">2011-2020</a>
+		   </div>
+           <div class="swiper-container">
+             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="history content-slide">
+                   <dl class="page1">
+                       <dt>1997</dt>
+                       <dd>03 박물관 건립계획 수립 추진</dd>
+                       <dt>1998</dt>
+                       <dd>10 박물관 건립부지 매입</dd>
+                       <dd>06 기본설계 현상 공모 및 실시설계</dd>
+                       <dt>1999</dt>
+                       <dd>12 공사착공</dd>
+                       <dd>05 건립자문위원회 구성</dd>
+                    </dl>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                   <div class="history content-slide">    
+                    <dl class="page2">
+                       <dt>2003</dt>
+                       <dd>07 박물관 개관</dd>
+                       <dt>2004</dt>
+                       <dd>08 서울특별시교육청 현장체험학습 지정기관 선정</dd>
+                       <dd>06 제1종 전문박물관 등록</dd>
+                       <dd>01 국제박물관협회(ICOM)가입</dd>
+                       <dt>2005</dt>
+                       <dd>07 2005 세계박물관문화박람회 참가</dd>
+                       <dd>02 전시물 및 시설물 보완공사 시행</dd>
+                       <dt>2006</dt>
+                       <dd>11 박물관 연간회원관리시스템 시행</dd>
+                       <dd>09 서울특별시교육감 지정 평생학습 협력기관 선정</dd>
+                       <dd>07 서대문자연사박물관 “관람객 100만명” 돌파</dd>
+                       <dd>05국가생물자원통합 DB네트워크 구축</dd>
+                       <dt>2007</dt>
+                       <dd>03 국가생물다양성기관연합 협정</dd>
+                       <dt>2008</dt>
+                       <dd>11 지식경제부 IT협업사업 추진 – 도슨트 로봇 시스템 개발</dd>
+                       <dd>06 국가생물다양성기관연합조사 참여 – 전남여수 다도해 해상국립공원</dd>
+                       <dd>01 제1종 전문박물관에서 제1종 종합박물관으로 승격</dd>
+                   </dl> 
+                  </div>
+               </div> 
+               <div class="swiper-slide">
+                    <div class="history content-slide">  
+                        <dl class="page3">
+                           <dt>2015</dt>
+                           <dd>12 상설전시관 리모델링, 조형물 확충</dd>
+                           <dt>2017</dt>
+                           <dd>09 박물관 시설 개선공사</dd>
+                           <dt>2020</dt>
+                           <dd>06 홈페이지 리뉴얼</dd>
+                           <dd>08 모바일웹 리뉴얼</dd>
+                       </dl>
+                   </div>
+                </div>
+              </div>
+           </div>
+         
+       </div> 
+    </article>
+    
+  <? include "foot.html" ?>
+ 
+ <script src="js/jquery-1.12.4.min.js"></script>
+ <script src="js/jquery-migrate-1.4.1.min.js"></script>
+ <script src="js/nav_new.js"></script>
+ <script src="js/topmenu.js"></script>
+ <script src="js/swiper.min.js"></script>
+ <script src="js/page_swiper_tab.js"></script>
+
+</body>
+</html>

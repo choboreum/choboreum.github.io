@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>CHOBOREUM | 퍼블리싱 가이드</title>
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modules.css" />
+    <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/guide.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="aside"></div>
+
+      <div class="guide-content">
+        <!-- 표준 문법의 사용 -->
+        <section class="guide-section">
+          <h2 class="section-title">표준 문법의 사용</h2>
+          <ul class="desc-guide">
+            <li>HTML은 해당 DTD의 명세에 맞게 작성하며, W3C validation을 통과해야 한다.</li>
+            <li>DTD를 제외한 모든 엘리먼트와 속성은 소문자로 작성한다.</li>
+            <li>속성의 값은 큰따옴표("")로 묶는다.</li>
+            <li>특수기호는 Entity name을 사용하여 entity 코드로 변환한다. Entity 코드는 ISO-8859-1을 기준으로 한다.</li>
+            <li>마크업은 <a href="http://www.w3.org/html/wg/drafts/html/master/" target="_blank" title="새창">w3c html5문법</a>에 준하여 사용한다.</li>
+            <li>종료 태그는 생략하지 않는다.</li>
+          </ul>
+
+          <h3>주의 해야할 특수기호 Entity name</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>주의 해야할 특수기호</caption>
+              <tbody>
+                <tr>
+                  <th scope="row" class="bg">Character</th>
+                  <td>&#8361;</td>
+                  <td>"</td>
+                  <td>&amp;</td>
+                  <td>&lt;</td>
+                  <td>&gt;</td>
+                  <td>&nbsp;</td>
+                  <td>&middot;</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="bg">Entity Name</th>
+                  <td>&amp;#8361;</td>
+                  <td>&amp;quot;</td>
+                  <td>&amp;amp;</td>
+                  <td>&amp;lt;</td>
+                  <td>&amp;gt;</td>
+                  <td>&amp;nbsp;</td>
+                  <td>&amp;middot;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="txt-guide1">* 참고 : <a href="http://www.w3schools.com/html/html_entities.asp" target="_blank" title="새창">HTML Entities</a></p>
+        </section>
+
+        <!-- 언어 / 문자셋(charset) 지정 -->
+        <section class="guide-section">
+          <h2 class="section-title">언어 / 문자셋(charset) 지정</h2>
+          <ul class="desc-guide">
+            <li>lang 속성은 User Agent가 언어를 올바로 해석할 수 있게 도와주며, 검색과 음성 장치에 활용된다.</li>
+            <li>utf-8은 다국어 지원이 가능하며, euc-kr 보다 표현 가능한 한글(고어, 음절 등)이 많음.</li>
+            <li>한글은 utf-8에서 3바이트, euc-kr에서 2바이트를 차지하기 때문에 utf-8이 euc-kr에 비하여 DB 저장 용량이나 트래픽이 많을수 있음.</li>
+            <li>utf-8 인코딩 기본. DB의 인코딩 방식과도 관련이 있으므로 개발자와 협의하여 결정.</li>
+          </ul>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">html</span> <span class="token attr-name">lang</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">ko</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <p class="txt-guide1">* 참고 : <a href="http://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ISO Language Codes</a></p>
+        </section>
+
+        <!-- Meta viewport 설정 -->
+        <section class="guide-section">
+          <h2 class="section-title">Meta viewport 설정</h2>
+          <p>뷰포트란 현재 화면에 보여지고 있는 여역을 의미한다, 기기별로 뷰포트가 다르기 때문에, 동일한 웹페이지라도 기기에 따른 배율 조정이 발생해 화면의 크기가 다르게 보이는 현상이 나타난다. 이러한 배율 문제에 대응하기 위해 meta 태그를 통해 뷰포트 관련 설정을 추가할 수 있다.</p>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span>meta <span class="token attr-name">name</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">viewport</span><span class="token punctuation">"</span> <span class="token attr-name">content</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-name">width</span><span class="token attr-equals">=</span><span class="attr-value">device-width</span><span class="token punctuation">,</span> <span class="token attr-name">initial-scale</span><span class="token attr-equals">=</span><span class="token attr-value">1.0</span><span class="token punctuation">,</span> <span class="token attr-name">maximum-scale</span><span class="token attr-equals">=</span><span class="token attr-value">1.0</span><span class="token punctuation">,</span> <span class="token attr-name">minimum-scale</span><span class="token attr-equals">=</span><span class="token attr-value">1.0</span><span class="token punctuation">,</span> <span class="token attr-name">user-scalable</span><span class="token attr-equals">=</span><span class="token attr-value">no</span><span class="token punctuation">,</span> <span class="token attr-name">target-densitydpi</span><span class="token attr-equals">=</span><span class="token attr-value">medium-dpi</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li>width=device-width : 브라우저 너비를 장치 너비에 맞추어 표시</li>
+            <li>initial-scale=1.0 : 초기 화면 배율 설정, 1.0은 100%와 같음</li>
+            <li>maximum-scale=1.0 : 최대 화면 배율 설정</li>
+            <li>minimum-scale=1.0 : 최소 화면 배율 설정</li>
+            <li>user-scalable=no : 사용자가 브라우저의 확대축소를 가능하게 할 것인지 정의</li>
+            <li>target-densitydpi=medium-dpi : 	DPI 지정</li>
+          </ul>
+        </section>
+
+        <!-- 구조, 표현, 동작의 분리 -->
+        <section class="guide-section">
+          <h2 class="section-title">구조, 표현, 동작의 분리</h2>
+          <p>문서의 구조(HTML)와 표현(CSS), 동작(script) 언어를 본래의 목적에 맞게 최대한 분리한다.</p>
+
+          <h3>예외사항</h3>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">input</span> <span class="token attr-name">type</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">text</span><span class="token punctuation">"</span> <span class="token attr-name">id</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">formMyClass</span><span class="token punctuation">"</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">my-class</span><span class="token punctuation">"</span> <span class="token attr-name">style</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">width</span><span class="token attr-value">:</span> <span class="token attr-value">80%</span><span class="token attr-value">;</span><span class="token punctuation">"</span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li>특정 엘리먼트에 id, class, style을 선언할 때에 선언 순서는 <em>엘리먼트의 기본 속성 지정후 마지막에 id, class와 style을 선언</em>한다.</li>
+            <li>테이블 셀의 경우 다양한 너비의 고정폭을 지닐 수 있는데 이것을 모두 CSS로 지정하는 것은 기대했던 효과에 대한 이점이 없으므로 예외의 경우를 허용함</li>
+            <li>필요 시 input, select 엘리먼트의 경우 너비의 고정폭 지정 허용함</li>
+          </ul>
+        </section>
+
+        <!-- table 엘리먼트 사용 방법 -->
+        <section class="guide-section">
+          <h2 class="section-title">table 엘리먼트 사용 방법</h2>
+          <p>레이아웃을 표현하기 위하여 표를 사용하지 않는다.</p>
+
+          <h4>올바른 테이블 사용 방법 예시</h4>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>올바른 테이블 사용 방법 예시</caption>
+              <tbody>
+                <tr>
+                  <th scope="row" class="bg">이름</th>
+                  <td>홍길동</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="bg">전화번호</th>
+                  <td>02-1234-5678</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="bg">E-mail</th>
+                  <td>abcd@naver.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="guide-code mt20">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">div</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">table-wrap</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">table</span>  <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">table vertical</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">caption</span><span class="token punctuation">&gt;</span></span>사용자정보<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">caption</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">tbody</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">th</span> <span class="token attr-name">scope</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">row</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>이름<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">th</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>홍길동<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">th</span> <span class="token attr-name">scope</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">row</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>전화번호<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">th</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>02-1234-5678<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">th</span> <span class="token attr-name">scope</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">row</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>E-mail<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">th</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>abcd@naver.com<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">tbody</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">div</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li>모바일에서의 테이블은 <em>가급적 세로형</em> 혹은 <em>가로 스크롤이 가능한</em> 테이블 형태로 사용(기획협의)</li>
+            <li>디자인에 머리글이 제공되어 있지 않더라도 반드시 머리글을 제공하며, 필요시 sr-only 처리</li>
+            <li>행 제목과 열 제목이 있는 경우 이에 대한 <em><code class="code-label">scope</code> 속성을 사용하여 행과 열의 범위를 적절히 구분하여 배치</em>한다.</li>
+          </ul>
+        </section>
+
+        <!-- 적절한 태그 및 속성 사용 -->
+        <section class="guide-section">
+          <h2 class="section-title">적절한 태그 및 속성 사용</h2>
+          <ul class="desc-guide">
+            <li>클릭했을 때 이벤트(function)가 발생하는 경우 <code class="code-label">&lt;button&gt;</code> 태그를 사용한다.</li>
+            <li>클릭했을 때 다른 페이지로 넘어가는 경우나 다운로드, 전화, 이메일 등의 경우 <code class="code-label">&lt;a&gt;</code> 태그를 사용한다.</li>
+            <li><code class="code-label">&lt;a&gt;</code> 태그 안에 <code class="code-label">&lt;button&gt;</code> 태그를 넣는 등 인터랙티브 요소에 인터랙티브 요소를 넣지 않도록 한다.</li>
+            <li>단락이 아닌 경우, 단순히 block 속성을 사용하기 위해서 <code class="code-label">&lt;p&gt;</code> 태그를 사용하지 않는다.</li>
+            <li><code class="code-label">&lt;heading&gt;</code> 태그는 레벨 순서를 지켜 작성한다.</li>
+            <li><code class="code-label">&lt;button&gt;</code> 태그에는 <code class="code-label">[type=""]</code>을 명시한다.</li>
+          </ul>
+        </section>
+
+        <!-- 엘리먼트의 기본 속성 및 지정 순서 -->
+        <section class="guide-section">
+          <h2 class="section-title">엘리먼트의 기본 속성 및 지정 순서</h2>
+          <ul class="desc-guide">
+            <li>User Interface 의 동작이 요구되면 id와 class속성을 선택적으로 사용할 수 있다.</li>
+            <li>id와 class 속성은 제일 뒷부분에 작성한다.</li>
+          </ul>
+          <div class="guide-code">
+            <pre class="language-markup">
+<code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">a</span> <span class="token attr-name">href</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span> <span class="token attr-name">target</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">_blank</span><span class="token punctuation">"</span> <span class="token attr-name">title</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">새창</span><span class="token punctuation">" <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">btn</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">a</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+  
+          <h3>section/article 태그 내에 제목 태그 필수 포함</h3>
+          <ul class="desc-guide">
+            <li><code class="code-label">&lt;section&gt;</code> 태그와 <code class="code-label">&lt;article&gt;</code> 태그는 독립적인 구획을 나타내는 데 사용한다.</li>
+            <li>제목을 포함하고 있는 영역일 경우 제목 태그(<code class="code-label">&lt;h1&gt;</code> ~ <code class="code-label">&lt;h6&gt;</code>)를 포함시켜 웹 접근성 측면에서 각 구획을 식별할 수 있게 해야 한다.
+              <div class="guide-code mt5">
+                <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">section</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">h2</span><span class="token punctuation">&gt;</span></span>공지사항<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">section</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+            </li>
+            <li>디자인 시안에 제목 태그가 없는 경우에는 다음과 같은 class 사용을 통한 숨김 처리를 하여, 스크린 리더에서 인식이 가능하도록 한다.
+              <div class="guide-code mt5">
+                <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">section</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">h2</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">sr-only</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>공지사항<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">section</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+            </li>
+          </ul>
+
+          <h3>a</h3>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">a</span> <span class="token attr-name">href</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span> <span class="token attr-name">target</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">_blank</span><span class="token punctuation">"</span> <span class="token attr-name">title</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">퍼블리싱 가이드 새창으로 열기</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span></span>퍼블리싱 가이드드<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">a</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">a</span> <span class="token attr-name">href</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">./../pdf/CHOBOREUM.pdf</span><span class="token punctuation">"</span> <span class="token attr-name">title</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">기업 설명서 PDF 다운로드</span><span class="token punctuation">"</span> <span class="attr-value">download</span><span class="token punctuation">&gt;</span></span>기업 설명서 PDF 다운로드<span class="token tag"><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">a</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li><em><code class="code-label">href</code> 속성의 기본값은 빈값으로 작성</em> 한다.</li>
+            <li>링크의 목표가 명확하지 않은 경우 <code class="code-label">title</code> 속성의 값으로 부가적인 설명을 제공한다.</li>
+            <li>새창열림 : [title="홈페이지명+새창으로 열기"]</li>
+            <li>다운로드 : [title="파일명+파일확장자 다운로드"]</li>
+          </ul>
+  
+          <h3>iframe</h3>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">iframe</span> <span class="token attr-name">src</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">about</span><span class="token attr-value">:</span> <span class="token attr-value">blank</span><span class="token attr-value">;</span><span class="token punctuation">"</span> <span class="token attr-name">title</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">빈프레임</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">iframe</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li><code class="code-label">&lt;iframe&gt;</code> 사용은 페이지 성능에 영향을 주시 때문에 가급적 사용을 하지 않는다.</li>
+            <li>iframe은 가장 마지막으로 로딩되기 때문에 페이지 로딩 초기에는 화면이 비어 보일 수 있다.</li>
+          </ul>
+  
+          <h3>img</h3>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">img</span> <span class="token attr-name">src</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">img.png</span><span class="token punctuation">"</span> <span class="token attr-name">alt</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">대체텍스트</span><span class="token punctuation">"</span> <span class="token punctuation">/</span><span class="token punctuation">&gt;</span></span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li><code class="code-label">alt</code> 속성은 반드시 제공되어야 하며 빈 값을 사용하지 않는다.</li>
+            <li>아이콘, bg와 같이 의미가 없는 이미지에 대해서는 되도록 <code class="code-label">img</code>태그가 아닌 가상선택자 <code class="code-label">after</code>, <code class="code-label">before</code> 를 사용한다.</li>
+            <li>단, 의미없는 이미지에 대하여 가상선택자로 사용할 수 없이 <code class="code-label">img</code>로 태그로 사용 되어야 하는 경우가 있다면 <code class="code-label">alt</code>속성을 빈값으로 작성하며 <code class="code-label">aria-hidden="true"</code> 속성을 <em>필수</em>로 기입한다.</li>
+          </ul>
+        </section>
+
+        <!-- 코드 작성 -->
+        <section class="guide-section">
+          <h2 class="section-title">코드 작성</h2>
+
+          <h3>들여쓰기</h3>
+          <p>코드의 가독성을 높이고 전체 HTML 구조를 쉽게 파악하기 위하여 들여쓰기 규칙을 준수한다. 마크업의 중첩이 깊어질 때마다 <em>자식 엘리먼트는 1탭 들여 쓰고, 1탭의 크기는 공백 4칸으로 설정</em>한다.</p>
+
+          <div class="dp-flex" style="justify-content: space-between">
+            <div class="dp-flex-cont col2">
+              <h4>들여쓰기를 하지 않는 경우</h4>
+              <div class="guide-code">
+                <pre class="language-markup">
+  <code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ko<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+            </div>
+            <div class="dp-flex-cont col2">
+              <h4>들여쓰기를 한 경우</h4>
+              <div class="guide-code">
+                <pre class="language-markup">
+  <code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ko<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <ul class="desc-guide">
+            <li>html의 자식 엘리먼트인 head, body</li>
+            <li>body의 자식 첫 번째 엘리먼트 div="wrap"</li>
+          </ul>
+
+          <h3>빈줄 / 주석</h3>
+          <ul class="desc-guide">
+            <li>그룹을 감싸고 있는 객체를 구분하기 위개하여 코드 그룹 간 1줄씩 빈 줄을 만드는 것은 허용한다.</li>
+            <li>빈 줄의 간격이 1줄을 초과하지 않으며 <em>발과 연동되는 그룹의 경우는 빈줄보다 주석을 작성</em>한다.</li>
+            <li>코드의 가독성을 높이고 전체 HTML 구조를 쉽게 파악하기 위하여 주석사용을 준수한다.</li>
+          </ul>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token comment">&lt;!-- header --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- logo --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- //logo --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- //header --&gt;</span>
+
+  <span class="token comment">&lt;!-- container --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- //container --&gt;</span>
+
+  <span class="token comment">&lt;!-- footer --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- //footer --&gt;</span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li>주석 기호와 주석 내용 사이에는 반드시 공백 한 칸이 있어야 한다.</li>
+            <li>시작과 종료주석의 내용은 동일해야 한다.</li>
+            <li>레이아웃 엘리먼트를 제외한 독립된 콘텐츠 영역의 주석 표기는 선택 사항이다.</li>
+            <li>개발 적용과 관련된 주석은 <em>해당되는 영역 라인 끝에 표기</em>하며, 종료 주석은 표기하지 않는다. 주석 앞에는 [DEV]라는 말머리를 사용하여 담당 개발자가 반드시 확인할 수 있도록 한다.</li>
+          </ul>
+
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token comment">&lt;!-- modal-popup --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-popup<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- [DEV] : 241206 | 활성화 시 addClass="active" 필요 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title type1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- [PUB] : 241206 | css 우선순위를 위해 class="type1" 추가 --&gt;</span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- //modal-popup --&gt;</span></code>
+            </pre>
+          </div>
+          <ul class="desc-guide">
+            <li>"[주석 확인 대상자] : 작성일 | 코멘트" 순으로 작성한다.</li>
+            <li>[DEV] : 개발자를 위한 주석, 개발에 넘겨야 할 내용을 상세히 작성한다. 종료 주석은 표기하지 않는다.</li>
+            <li>[PUB] : 퍼블리셔를 위한 주석, 마크업 작업 시 특이사항을 작성한다.</li>
+          </ul>
+        </section>
+
+        <!-- 아이디(id) -->
+        <section class="guide-section">
+          <h2 class="section-title">아이디(id)</h2>
+          <p>ID는 개발을 위해서만 사용하고, 퍼블리싱 작업시에는 앵커 및 label 등의 연결하는 상황 등을 제외하고는 일반적으로 사용하지 않으므로 정리하여 기재하지 않는다.</p>
+
+          <h3>아이디 네이밍 규칙 예</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>아이디 네이밍 규칙 예</caption>
+              <colgroup>
+                <col width="503%" span="2" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>잘못된 예</th>
+                  <th>올바른 예</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="red">error_Mesage</td>
+                  <td class="blue">errorMesage</td>
+                </tr>
+                <tr>
+                  <td class="red">control-center</td>
+                  <td class="blue">controlCenter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="desc-guide">
+            <li>시작의 이름은 영문 소문자를 사용하되 <em>두 번째 단어부터 첫 번째 문자를 대문자로 처리하는 기법(<strong>카멜 케이스</strong>)</em>을 사용한다.</li>
+            <li>동일한 이름의 id는 문서에서 한번만 사용이 가능하다.</li>
+            <li>지정된 레이아웃 및 폼객체를 제외한 <em>스타일 지정을 위하여 id를 사용하지 않는다</em>.</li>
+            <li>앵커로서 사용되는 엘리먼트는 id 지정이 가능하다.</li>
+            <li>User Interface 동작을 위하여 DOM 선택자로서의 id 지정은 가능하다.</li>
+            <li>예약어가 있는 경우 예약어를 사용한다.</li>
+          </ul>
+
+          <h3>예약어</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>예약어</caption>
+              <colgroup>
+                <col span="2" style="width: 25%" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>예약어</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="5">레이아웃</td>
+                  <td>#wrap</td>
+                  <td>페이지 전체 영역 그룹핑</td>
+                </tr>
+                <tr>
+                  <td>#container</td>
+                  <td>본문영역</td>
+                </tr>
+                <tr>
+                  <td>#header</td>
+                  <td>상단 header영역</td>
+                </tr>
+                <tr>
+                  <td>#footer</td>
+                  <td>하단 footer영역</td>
+                </tr>
+                <tr>
+                  <td>#gnb</td>
+                  <td>메인 네비게이션</td>
+                </tr>
+                <tr>
+                  <td rowspan="4">팝업</td>
+                  <td>#layerPop</td>
+                  <td>레이어 팝업</td>
+                </tr>
+                <tr>
+                  <td>#modalPop</td>
+                  <td>모달 팝업</td>
+                </tr>
+                <tr>
+                  <td>#toastPop</td>
+                  <td>토스트 팝업</td>
+                </tr>
+                <tr>
+                  <td>#bottomSheet</td>
+                  <td>바텀시트 팝업</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- //아이디(id) -->
+        
+        <!-- 클래스(class) -->
+        <section class="guide-section">
+          <h2 class="section-title">클래스(class)</h2>
+
+          <h3>클래스 네이밍 규칙 예</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 네이밍 규칙 예</caption>
+              <colgroup>
+                <col width="503%" span="2" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>잘못된 예</th>
+                  <th>올바른 예</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="red">errorMesage</td>
+                  <td class="blue">error-mesage</td>
+                </tr>
+                <tr>
+                  <td class="red">control_center2</td>
+                  <td class="blue">control-center02</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="desc-guide">
+            <li>네이밍은 <em>- (하이폰) 사용</em>을 기본으로 한다. (클래스 네임이 서버사이드 스크립트의 변수와 자바스크립트의 변수 정의시 혼돈을 방지)</li>
+            <li>네이밍의 조합은 '유형_속성_순서_상태'을 기본 순서로 사용한다.</li>
+            <li>시작의 이름은 영문 소문자를 사용하며 두 번째 단어부터 하이픈(-)으로 연결하며 <em>대문자는 사용하지 않는다</em>.</li>
+            <li>영문 소문자, 숫자, 하이픈(-)만 사용할 수 있다.</li>
+            <li>하이픈(-)은 2개 이상의 단어를 조합할 때만 사용한다.</li>
+            <li>하이픈(-)을 이용하여 3단계를 초과하여 사용하는 방법은 지양한다.</li>
+            <li>숫자 없으면 '1'이라는 숫자가 생략된 것으로 간주한다.</li>
+            <li>다중의 클래시 지정을 허용하며 <em>최대 3개 이상</em> 사용하지 않도록 주의한다.</li>
+            <li>단, 여백 혹은 넓이를 지정하는 클래스는 예외로 한다.</li>
+          </ul>
+
+          <h3>예약어</h3>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 예약어</caption>
+                <colgroup>
+                  <col width="33.33%" span="3" />
+                </colgroup>
+              <thead>
+                <tr>
+                  <th>클래스명</th>
+                  <th>용도</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>.title</td>
+                <td>제목</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.subtitle</td>
+                <td>부제</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.content</td>
+                <td>내용</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.rank</td>
+                <td>순위</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.category</td>
+                <td>분야</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.icon</td>
+                <td>아이콘</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.cover</td>
+                <td>표지</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.thumb</td>
+                <td>썸네일 이미지</td>
+                <td>thumbnail</td>
+              </tr>
+              <tr>
+                <td>.info</td>
+                <td>정보</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.summary</td>
+                <td>요약</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.detail</td>
+                <td>상세</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.desc</td>
+                <td>설명</td>
+                <td>description</td>
+              </tr>
+              <tr>
+                <td>.price</td>
+                <td>가격</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.org_price</td>
+                <td>정가</td>
+                <td>original price</td>
+              </tr>
+              <tr>
+                <td>.sell_price</td>
+                <td>판매가</td>
+                <td>selling price</td>
+              </tr>
+              <tr>
+                <td>.dc_rate</td>
+                <td>할인률</td>
+                <td>discount rate</td>
+              </tr>
+              <tr>
+                <td>.save_point (.earn_point, .mileage)</td>
+                <td>적립금</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.save_rate (.ml_rate)</td>
+                <td>적립률</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.num</td>
+                <td>숫자</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.date</td>
+                <td>날짜</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.name</td>
+                <td>이름</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.on .active .selected</td>
+                <td>활성</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.off .disabled</td>
+                <td>비활성</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.first</td>
+                <td>첫번째 요소</td>
+                <td>IE6 이 :first-child 선택자를 지원하지 않는 것에 대한 대안으로 사용한다.</td>
+              </tr>
+              <tr>
+                <td>.second</td>
+                <td>두번째 요소</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.last</td>
+                <td>마지막 요소</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.each</td>
+                <td>짝수번째 요소</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.odd</td>
+                <td>홀수번째 요소</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.focus</td>
+                <td>초점받은 요소</td>
+                <td>IE6, IE7 이 :focus 선택자를 지원하지 않는 것에 대한 대안으로 사용한다.</td>
+              </tr>
+              <tr>
+                <td>.error</td>
+                <td>에러</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.loading</td>
+                <td>로딩</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.dimmed</td>
+                <td>딤드</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>.noscroll .fixed</td>
+                <td></td>
+                <td>스크롤 고정</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>약속어</h3>
+          <h4>첫단어</h4>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 첫단어</caption>
+              <colgroup>
+                <col width="33.33%" span="3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">클래스명</th>
+                  <th scope="col">용도</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.section-</td>
+                  <td>콘텐츠</td>
+                  <td>콘텐츠를 분할하거나 그룹핑 하는 블럭 <br>보통 #content 내부에 배치한 다음 heading 태그와 함께 사용하는 것을 권장.</td>
+                </tr>
+                <tr>
+                  <td>.box-</td>
+                  <td>박스</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.bull-</td>
+                  <td>블릿</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.nav-</td>
+                  <td>네비</td>
+                  <td>탐색 역할을 갖는 범위의 메뉴<br>네비게이션 으로 사용되는 요소영역에 사용<br>예) .nav-gnb / .nav-lnb ..</td>
+                </tr>
+                <tr>
+                  <td>.menu-</td>
+                  <td>메뉴</td>
+                  <td>탐색 역할이 없는 선택목록 메뉴</td>
+                </tr>
+                <tr>
+                  <td>.ico-</td>
+                  <td>아이콘</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.list-</td>
+                  <td>목록</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.table</td>
+                  <td>표</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.acc-</td>
+                  <td>아코디언</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.tab-</td>
+                  <td>탭 메뉴</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>.btn-</td>
+                  <td>버튼</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+              
+          <h4>끝단어</h4>
+          <h5>영역</h5>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 끝단어</caption>
+              <colgroup>
+                <col style="width: 33.3%;" span="3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">클래스명</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-container</td>
+                  <td>전체 영역</td>
+                  <td>컨텐츠의 전체 영역</td>
+                </tr>
+                <tr>
+                  <td>-wrap</td>
+                  <td>바깥 영역</td>
+                  <td>UI 영역 단위로 그룹화</td>
+                </tr>
+                <tr>
+                  <td>-inner</td>
+                  <td>안쪽 영역</td>
+                  <td>내부 영역</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h5>상태</h5>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 끝단어</caption>
+              <colgroup>
+                <col style="width: 33.3%;" span="3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">클래스명</th>
+                  <th scope="col">용도</th>
+                  <th scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-on</td>
+                  <td>활성화 상태</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>-off</td>
+                  <td>비활성화 상태</td>
+                  <td>기본값이 off라면 생략가능</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <h5>구조</h5>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 끝단어</caption>
+              <colgroup>
+                <col style="width: 33.3%;" span="3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col">예약어</th>
+                  <th scope="col">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-contents</td>
+                  <td>본문 영역</td>
+                  <td>전체 영역의 본문</td>
+                </tr>
+                <tr>
+                  <td>-title</td>
+                  <td>제목 영역</td>
+                  <td>전체 영역의 제목</td>
+                </tr>
+                <tr>
+                  <td>-text</td>
+                  <td>본문 텍스트 영역</td>
+                  <td>전체 영역의 본문 텍스트</td>
+                </tr>
+                <tr>
+                  <td>-desc</td>
+                  <td>본문 텍스트 설명 영역</td>
+                  <td>전체 영역의 본문 텍스트 설명 영역</td>
+                </tr>
+                <tr>
+                  <td>-list</td>
+                  <td>리스트</td>
+                  <td><code class="code-label">&lt;ul&gt;</code>, <code class="code-label">&lt;ol&gt;</code>에 해당하는 반복되는 목록 그룹</td>
+                </tr>
+                <tr>
+                  <td>-item</td>
+                  <td>항목</td>
+                  <td>리스트 항목</td>
+                </tr>
+                <tr>
+                  <td>-type1, -type2, -type3, ...<br>
+                    -a, -b, -c, ...<br>
+                  </td>
+                  <td>확장</td>
+                  <td>기존 스타일이 확장될 때에 사용<br>예) red-type1/ red-type2/ input-a/ input-b</td>
+                </tr>
+                <tr>
+                  <td>-link</td>
+                  <td>링크</td>
+                  <td>링크 항목</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h5>크기 단위</h5>
+          <div class="table-wrap">
+            <table class="table vertical">
+              <caption>클래스 약속어 끝단어</caption>
+              <colgroup>
+                <col style="width: 33.3%;" span="3" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col">예약어</th>
+                  <th scope="col">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>더 크게</td>
+                  <td>-xl</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>크게</td>
+                  <td>-lg</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>보통</td>
+                  <td>-md</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>작게</td>
+                  <td>-sm</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>더 작게</td>
+                  <td>-xs</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- //클래스(class) -->
+
+        <!-- class 네이밍 확장 -->
+        <section class="guide-section">
+          <h2 class="section-title">class 네이밍 확장</h2>
+          <h3>종속 확장</h3>
+          <p>기본형 class에 종속되어 여백, 색깔, 행간 등의 몇 가지 속성을 부여하고자 할 때 사용하는 class. 다음은 input_wrap class 확장 예시이다.</p>
+          <div class="guide-code">
+            <pre class="language-markup">
+<code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">div</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">input-wrap type1</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">div</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">input-wrap type2</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">div</span><span class="token punctuation">&gt;</span></code>
+            </pre>
+          </div>
+
+          <h3>독립 확장</h3>
+          <p>기본형 class의 변형이 type으로 분류할 만큼 클 경우 사용하는 class로, 작성 예시는 다음과 같다.</p>
+          <div class="guide-code">
+            <pre class="language-markup">
+  <code class="language-markup"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">div</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">input-wrap-a</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token punctuation">&lt;</span><span class="token tag">div</span> <span class="token attr-name">class</span><span class="token attr-equals">=</span><span class="token punctuation">"</span><span class="token attr-value">input-wrap-b</span><span class="token punctuation">"</span><span class="token punctuation">&gt;</span><span class="token punctuation">&lt;</span><span class="token punctuation">/</span><span class="token tag">div</span><span class="token punctuation">&gt;</span></code>
+            </pre>
+          </div>
+        </section>
+        <!-- //class 네이밍 확장 -->
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>

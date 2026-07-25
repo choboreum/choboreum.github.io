@@ -1,0 +1,138 @@
+.wrapper{
+  overflow-x: hidden;
+}
+
+.content{
+  .sub1-title{
+    width: 100vw;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    span{
+      opacity: 0;
+      transition: .2s opacity, .5s top;
+      position: relative;
+      top: 20px;
+      font-size: 26px;
+    }
+  }
+}
+
+.items{
+  padding: 0 5vw;
+  .item{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    margin-bottom: 100px;
+  }
+}
+
+.text-container{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  .tit {
+    margin-bottom: 30px;
+    .sub {
+      color: #666;
+    }
+    .main {
+      font-size: 2.3rem;
+    }
+  }
+
+  .desc {
+    margin-bottom: 10px;
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+  .btn_area{
+    display: flex;
+    flex-wrap: wrap;
+    .btn{
+      display: inline-block;
+      font-weight: 700;
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 5px 60px 3px;
+      margin: 0 7px 10px 0;
+      &:hover{
+        background: #000;
+        color: #fff;
+        transition: all .1s ease;
+      }
+    }
+  }
+}
+
+.image-container{
+  position: relative;
+  transition: all 0.5s ease;
+  .card{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img{
+    width: 20vw;
+    margin: 0 1vw;
+  }
+  &.from_left{
+    left: -999%;
+  }
+  &.from_right{
+    right: -999%;
+  }
+}
+
+.op1{
+  opacity: 1 !important;
+}
+
+.pt{
+  top: 0 !important;
+}
+
+.pl{
+  left: 0 !important;
+}
+
+.pr{
+  right: 0 !important;
+}
+
+@media screen and (max-width: 720px) {
+  .items {
+    .item{
+      flex-direction: column;
+      border-top: 1px solid #ddd;
+      padding-top: 30px;
+    }
+  }
+  .image-container {
+    img {
+      width: 40vw;
+      margin: 30px 1vw;
+    }
+  }
+
+}

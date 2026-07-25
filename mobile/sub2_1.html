@@ -1,0 +1,130 @@
+<?
+	session_start(); 
+    @extract($_POST);
+    @extract($_GET);
+    @extract($_SESSION);    
+?>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+
+<title>서대문자연사박물관 Mobile Web</title>
+
+<link rel="apple-touch-icon-precomposed" href="app_icon.png">
+<link rel="apple-touch-startup-image" href="startup_x1.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/sub2_1.css">
+
+<script src="js/prefixfree.min.js"></script>
+
+<script>
+  // <![CDATA[
+  try {
+   window.addEventListener('load', function(){
+    setTimeout(scrollTo, 0, 0, 1); 
+   }, false);
+  } 
+  catch(e) {}
+  // ]]>
+ </script>
+ <script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
+ <!--[if lt IE 9]> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <? include "head.html" ?>
+    
+    <article id="content">
+        <div class="content_area">
+           <div class="title_area">
+               <h3 class="hidden">이용안내</h3>
+               <h2>관람도우미</h2>
+           </div>
+            <section>
+                <h3>관람정보</h3>
+                <dl>
+                    <dt>관람시간</dt>
+                    <dd>평일 - 09:00 ~ 18:00<br>토요일 - 09:00 ~ 19:00<br><span>* 매표 및 입장마감은 1시간전 입니다.</span></dd>
+                </dl>
+                <dl>   
+                    <dt>휴관안내</dt>
+                    <dd>매주 월요일과 1월 1일,<br>설날/추석 당일날 입니다.<br><span>* 월요일이 공휴일이면 다음날 휴관합니다.</span></dd>
+                </dl>
+                <dl>
+                    <dt>문화의 날</dt>
+                    <dd>매월 마지막주 수요일은<br>'문화가 있는 날'입니다.<br><span>* 관람료 20% 할인(중복할인 불가)</span></dd>
+                </dl>
+            </section>
+
+            <section>
+                <h3>관람료</h3>
+                <table>
+                   <caption class="hidden">관람료 안내 : 구분, 금액, 비고로 나타낸 표</caption>
+                   <thead>
+                        <tr class="colgroup"> 
+                            <th scope="col">구분</th>
+                            <th scope="col">금액</th>
+                            <th scope="col">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">일반</th>
+                            <td>2,000원</td>
+                            <td>20~64세</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">청소년</th>
+                            <td>1,000원</td>
+                            <td>5~19세</td>
+                        </tr>
+                         <tr>
+                            <th scope="row">영유아, 노인/<br> 장애인</th>
+                            <td>무료</td>
+                            <td>4세 이하 및 65세 이상/<br>장애인등록증을 소지자<br>(장애인 등급 중증 일 경우<br>동행하는 보호자 1명 포함)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">서대문구민</th>
+                            <td> - </td>
+                            <td>일반, 청소년만 50% 할인</td>
+                        </tr>
+                    </tbody>    
+                </table>
+            </section>
+
+            <section>
+                <h3>관람시 유의사항</h3>
+                <ul>
+                    <li><span class="slash1"></span><p>음식물 반입과 안내견 외 애완동물의 출입 금지</p></li>
+                    <li><span class="slash2"></span><p>자전거, 퀵보드, 인라인스케이트, 바퀴달린 신발, 모든 승용완구(유아용 자전거-유모차형 자전거), 푸쉬카 등 입장 금지</p></li>
+                    <li><span class="slash3"></span><p>전시장 내 어린이들이 떠들거나 달리기 금지</p></li>
+                    <li><span class="slash4"></span><p>전시물에 손상을 입힐 수 있는 행위는 절대 삼가</p></li>
+                    <li><span class="slash5"></span><p>플래시/삼각대, 셀카봉, 상업적 용도 촬영금지</p></li>
+                    <li><span class="slash6"></span><p>전시실 안의 질서를 문란하게 할 우려가 있거나 다른 사람들의 관람에 지장을 초래할 우려될 때, 관람 거절 혹은 퇴출</p></li>
+                    <li><span class="slash7"></span><p>전시물을 파괴하거나 훼손했을 경우, 이에 대한 책임과 변상</li>
+                </ul>
+            </section>
+       </div> 
+    </article>
+    
+  <? include "foot.html" ?>
+ 
+ <script src="js/jquery-1.12.4.min.js"></script>
+ <script src="js/jquery-migrate-1.4.1.min.js"></script>
+ <script src="js/nav_new.js"></script>
+ <script src="js/topmenu.js"></script>
+ 
+</body>
+</html>

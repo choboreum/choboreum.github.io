@@ -1,0 +1,63 @@
+<div id="skipNav">
+    <a href="#content">본문바로가기</a>
+    <a href="#gnb">네비게이션바로가기</a>
+ </div>
+ <div id="wrap">
+  <header id="headerArea"><!--고정이미지 미디어쿼리-->
+      <h1><a href="index.html">서대문자연사박물관 로고</a></h1>
+      <a class="btn" href="javascript:void(0);"><i class="fas fa-bars"></i></a>
+      <div class="box"></div>
+      <nav id="gnb">
+          <h2 class="hidden">글로벌네비게이션영역</h2>
+           <p>서대문자연사박물관<br><span>Seodaemun Museum Of Natural History</span></p>
+            <ul class="mainMenu">  
+                <li class="depth1"><h3><a href="javascript:void(0);">기관소개<span class="navbtn"></span></a></h3>
+                    <ul>
+                        <li><a href="sub1_1.html">인사말</a></li>
+                        <li><a href="sub1_2.html">박물관소개</a></li>
+                        <li><a href="sub1_3.html">연혁</a></li>
+                    </ul>
+                </li>
+                <li class="depth1"><h3><a href="javascript:void(0);">이용안내<span class="navbtn"></span></a></h3>
+                    <ul>
+                        <li><a href="sub2_1.html">관람안내</a></li>
+                        <li><a href="sub2_2.html">관람도우미</a></li>
+                        <li><a href="sub2_3.html">찾아오시는길</a></li>
+                    </ul>
+                </li>
+                <li class="depth1"><h3><a href="javascript:void(0);">전시소개<span class="navbtn"></span></a></h3>
+                    <ul>
+                        <li><a href="sub3_1.html">지구환경관</a></li>
+                        <li><a href="sub3_2.html">생명진화관</a></li>
+                        <li><a href="sub3_3.html">중앙홀</a></li>
+                    </ul>
+                </li>
+                <li class="depth1"><h3><a href="javascript:void(0);">커뮤니티<span class="navbtn"></span></a></h3>
+                    <ul>
+                        <li><a href="sub4_1.html">자주 묻는 질문</a></li>
+                        <li><a href="sub4_2.html">자원봉사</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="join join2">
+                  <?
+                    if(!$userid) 
+                    {
+                  ?>
+                   <li><a href="login/login_form.php">로그인</a></li>
+                   <li><a href="member/join.html">회원가입</a></li>
+                  <?
+                    }
+                    else 
+                    {
+                  ?> 
+                   <li class="name"><span><i class="fas fa-user"></i><?=$usernick?> </span></li>
+                   <li><a href="login/logout.php">로그아웃</a></li>
+                   <li><a href="login/member_form_modify.php">정보수정</a></li>
+                   <?
+                    }
+                   ?>
+            </ul>
+            <a class="mclose" href="javascript:void(0);"><i class="fas fa-times"></i></a>
+      </nav>
+  </header>

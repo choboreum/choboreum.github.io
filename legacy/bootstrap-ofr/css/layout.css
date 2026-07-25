@@ -1,0 +1,39 @@
+.container-fluid {padding-right: 0; padding-left: 0; margin-right: 0; margin-left: 0}
+a{display: block}
+header{height: 70px}
+#navigation #logo a,#footer .footer-single .logo{width: 103px; height: 50px; background: url(../images/logo.png) no-repeat; text-indent: -999px; overflow: hidden; color: #fff; float: left}
+#logo{margin-top: 10px}
+.navbar-nav li a {font-size: 22px}
+
+.icon-scroll:before{position: absolute; left: 12px;content: ''; width: 8px; height: 8px; background: #fff; margin-left: -4px; top: 6px; border-radius: 4px; animation-duration: 1.5s; animation-iteration-count: infinite; animation-name: scrolls}
+
+@keyframes scrolls{
+    0%{opacity: 1;}
+    100%{opacity: 0; transform: translateY(46px)}
+}
+
+.scrolldown {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+}
+
+.scrolldown .scroll {
+  border-radius: 100px;
+  width: 25px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  margin: 0 0 0 -15px;
+  display: inline-block;
+  border: 1px solid #fff;
+  z-index: 99;
+}
+
+.contact{border-top: 2px dashed #ccc}
+
+.footer-social li{text-align: center}
+footer{font-size: 14px}
+footer img{margin-bottom: 15px}
+#footer .footer-single .logo{margin-bottom: 15px}
+#footer .footer-single p{clear: both}

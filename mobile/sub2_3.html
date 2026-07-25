@@ -1,0 +1,147 @@
+<?
+	session_start(); 
+    @extract($_POST);
+    @extract($_GET);
+    @extract($_SESSION);    
+?>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+
+<title>서대문자연사박물관 Mobile Web</title>
+
+<link rel="apple-touch-icon-precomposed" href="app_icon.png">
+<link rel="apple-touch-startup-image" href="startup_x1.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/sub2_3.css">
+
+<script src="js/prefixfree.min.js"></script>
+
+<script>
+  // <![CDATA[
+  try {
+   window.addEventListener('load', function(){
+    setTimeout(scrollTo, 0, 0, 1); 
+   }, false);
+  } 
+  catch(e) {}
+  // ]]>
+ </script>
+ <script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
+ <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70c6e2f784f7f7da7a5faa1851e71b2a"></script>
+ <script src="../map/js/map2.js"></script>
+ <!--[if lt IE 9]> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <? include "head.html" ?>
+    
+    <article id="content">
+       <div class="content_area">
+        <div class="title_area">
+           <h3 class="hidden">이용안내</h3>
+           <h2>찾아오시는 길</h2>
+        </div>
+        <div id="map"></div> 
+        <span></span>
+        <div class="info">
+            <dl>
+               <dt>ADDR.</dt>
+               <dd>서울시 서대문구 연희로32길 51(연희동) 03718</dd>
+            </dl>
+              <dl>  
+               <dt>EMAIL.</dt>
+               <dd>namuadmin@sdm.go.kr</dd>
+            </dl>
+            <dl>
+               <dt>TEL.</dt>
+               <dd>02-330-8899</dd>
+            </dl>
+            <dl>
+               <dt>FAX.</dt>
+               <dd>02-330-1736</dd>
+            </dl>
+        </div> 
+
+        <section class="subway">
+            <h3>지하철</h3>
+            <dl>
+                <dt><img src="images/sub2/train2_x2.png" alt="">신촌역(2호선) 3, 4번 출구</dt>
+                <dd>서대문03번 마을버스 탑승 - 서대문자연사박물관 정류장 하차</dd>
+            </dl>
+            <dl>
+                <dt><img src="images/sub2/train1_x2.png" alt="">홍제역(3호선) 3, 4번 출구</dt>
+                <dd>7738(지선버스) 탑승 - 서대문자연사박물관 정류장 하차<span>* 지하철 연계버스(7738) 이용 시 지선버스 정류장 이용</span></dd>
+            </dl>
+        </section>   
+
+        <section class="bus">     
+            <h3>버스</h3>
+            <dl>
+                <dt><img src="images/sub2/bus1_x2.png" alt="">간선버스</dt>
+                <dd>110A, 153번</dd>
+            </dl>
+            <dl>
+                <dt><img src="images/sub2/bus2_x2.png" alt="">지선버스</dt>
+                <dd>7017, 7720, 7738번</dd>
+            </dl>
+        </section>
+
+        <section class="parking">
+            <h3>주차안내</h3>
+                <table>
+                   <caption class="hidden">주차 요금안내:구분, 기본, 2시간 초과 10분당으로 나타낸 표</caption>
+                    <thead>
+                       <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col" class="line">기본(2시간)</th>
+                            <th scope="col">2시간 초과 10분당</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">대형(20인승 이상)</th>
+                            <td class="line">5,000원</td>
+                            <td>1,000원</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">소형(20인승 이상)</th>
+                            <td class="line">3,000원</td>
+                            <td>500원</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">경차(1,000cc 이하)</th>
+                            <td colspan="2" class="line2">정산금액의 50% 할인</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <ul>
+                    <li>주말, 휴일의 경우 오후 12시 30분 이후에는 주차가 어렵습니다.(만차 후 인근 주차장으로 안내합니다.)</li>
+                    <li>주말, 휴일 대형버스는 주차할 수 없습니다.</li>
+                </ul>
+            </section>
+       </div>
+    </article>
+    
+  <? include "foot.html" ?>
+ 
+ <script src="js/jquery-1.12.4.min.js"></script>
+ <script src="js/jquery-migrate-1.4.1.min.js"></script>
+ <script src="js/nav_new.js"></script>
+ <script src="js/topmenu.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+    
+        <title>CHOBOREUM | 퍼블리싱 가이드</title>
+    
+        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="./css/modules.css" />
+        <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+    
+        <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="./js/guide.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="aside"></div>
+
+            <div class="guide-content">
+                <section class="guide-section">
+                    <h2 class="section-title">이미지 네이밍 규칙</h2>
+                    <ul class="desc-guide">
+                        <li>이미지 네이밍의 조합은 '<em>유형_속성_순서_상태</em>'로 조합한다.</li>
+                        <li>같은 이름의 이미지가 두 개 이상 존재하면 <em>숫자로 구분</em>한다.</li>
+                        <li>이미지 네이밍은 <em>이미지의 확장자에 관계 없이 순차적으로 적용</em>한다. 예) btn_confirm.gif, btn_confirm_02.jpg, btn_confirm_03.png</li>
+                    </ul>
+                    <div class="table-wrap">
+                        <table class="table vertical">
+                            <caption>이미지 네이밍 규칙 예</caption>
+                            <colgroup><col span="2" style="width:25%;"/><col /></colgroup>
+                            <thead>
+                                <tr>
+                                    <th>잘못된 예</th>
+                                    <th>올바른 예</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="red">on_tab_info.gif</td>
+                                    <td class="blue">tab_info_on_01.gif</td>
+                                    <td>'<em>유형_속성_순서_상태</em>'로 조합한다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="red">tio.gif</td>
+                                    <td class="blue">tab_info_on.gif</td>
+                                    <td>임의로 축약하지 않는다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="red">tbl_type_list_02_off.gif</td>
+                                    <td class="blue">tbl_list_02_off.gif</td>
+                                    <td>가급적 4단계 이하의 조합을 사용한다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="red">btn_Active.gif</td>
+                                    <td class="blue">btn_active.gif</td>
+                                    <td>영문 소문자를 사용한다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="red">arrow_type1.gif</td>
+                                    <td class="blue">arrow_right_12x12_01.gif</td>
+                                    <td>동일 이미지 중복 생성을 필하기 위해 블릿, 도트 등은 네이밍으로 기본 이미지를 구분할수 있는(사이즈 등) 네이밍을 사용한다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    
+                    <h3>이미지 예약어</h3>
+                    <ul class="desc-guide">
+                        <li>임시이미지에 한하여 <em>@특수문자를 처음으로 사용</em>할 수 있다.</li>
+                        <li>이미지 예약어에 숫자, 영문소문자, 언더바(_)를 조합하여 사용할 수 있다.</li>
+                    </ul>
+                    <div class="table-wrap">
+                        <table class="table vertical">
+                            <caption>이미지 예약어</caption>
+                            <colgroup>
+                                <col span="2" style="width:25%;"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">분류</th>
+                                    <th scope="col">파일명</th>
+                                    <th scope="col">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>버튼</td>
+                                    <td>btn_</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>아이콘</td>
+                                    <td>ico_</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>화살표</td>
+                                    <td>arrow_</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>배경</td>
+                                    <td>bg_</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>배너</td>
+                                    <td>banner_</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>임시</td>
+                                    <td>@_</td>
+                                    <td>관리자나 사용자에 의해 등록될 이미지 영역으로 기본코딩을 위한 임시이미지</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="guide-section">
+                    <h2 class="section-title">폴더 규칙</h2>
+                    <div class="table-wrap">
+                        <table class="table vertical">
+                            <caption>이미지 예약어</caption>
+                            <colgroup>
+                                <col span="2" style="width:25%;"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">분류</th>
+                                    <th scope="col">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>버튼</td>
+                                    <td>btn_</td>
+                                </tr>
+                                <tr>
+                                    <td>아이콘</td>
+                                    <td>ico_</td>
+                                </tr>
+                                <tr>
+                                    <td>화살표</td>
+                                    <td>arrow_</td>
+                                </tr>
+                                <tr>
+                                    <td>배경</td>
+                                    <td>bg_</td>
+                                </tr>
+                                <tr>
+                                    <td>각 페이지명</td>
+                                    <td>페이지명_</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="guide-section">
+                    <h2 class="section-title">이미지 크기</h2>
+                    <ul class="desc-guide">
+                        <li>화면 크기, 네트워크 속도, 로딩 시간 등을 고려 이미지의 크기는 최적화 되어야 한다. </li>
+                        <li>이미지의 크기는 500KB으로 제한한다.</li>
+                        <li>반응형 이미지 사용할 시 필요할 경우에는 <code class="code-label">&lt;picture&gt;</code> 태그 또는 <code class="code-label">srcset</code> 속성을 사용하여 디바이스별로 적합한 이미지 제공한다.</li>
+                    </ul>
+                </section>
+
+                <section class="guide-section">
+                    <h2 class="section-title">고해상도 대응(X3)</h2>
+                    <ul class="desc-guide">
+                        <li>다양한 디스플레이 화면에서 선명도 보장이 필요하기 때문에, 노출하려는 크기의 3배 크기의 이미지로 제작하고 스타일시트에서 1배수 크기로 리사이징한다.</li>
+                        <li>단, 반응형이 아닌 pc/mobile 구분이 되어 있을 경우에는 pc는 1배수로 이미지를 추출한다.</li>
+                    </ul>
+                    <div class="table-wrap mt15">
+                        <table class="table vertical">
+                            <colgroup>
+                                <col width="50%" span="2"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">원본 이미지</th>
+                                    <th scope="col">CSS 적용</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="./images/no_list.png" alt=""></td>
+                                    <td><img src="./images/no_list.png" alt="" style="width: 47.33px; height: 47.66px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>142 x 143</td>
+                                    <td>47.3 x 47.6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

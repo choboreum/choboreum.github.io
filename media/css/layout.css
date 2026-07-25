@@ -1,0 +1,215 @@
+/* 와이드 pc  */
+#wrap{overflow: hidden; margin: 0 auto}
+#content section{width: 90%; margin: 0 5%; background: rgba(6,6,6,.9); padding: 70px 0 100px; margin-bottom: 150px}	
+#content section h3{text-align: center; font-family: 'Noto Serif KR', serif;; font-weight: 700; font-size: 58px; font-style: italic; margin-bottom: 70px; position: relative}
+#content section h3:nth-of-type(2){margin-bottom: 30px}
+#content section>ul, #content>div>ul{padding: 0 5%}
+
+.videoBox{width: 100%; height: 100%; overflow: hidden; position: absolute}
+#videoBG{position: fixed;/*고정=>fixed/ 스크롤처리=>absolute */ left:50%; top: 50%;/*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/ width:auto; min-width:100%; /*동영상 너비를 꽉차게*/ height:auto; min-height: 100%; /*동영상 높이를 꽉차게*/ transform: translateX(-50%) translateY(-50%); z-index: -100; /*다른요소보다 아래에 위치*/}
+
+#imgBG{position: fixed;/*고정=>fixed/ 스크롤처리=>absolute */ left: 50%; top: 50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/ width: auto; min-width: 100%; /*동영상 너비를 꽉차게*/ height: auto; min-height: 100%; /*동영상 높이를 꽉차게*/ transform: translateX(-50%) translateY(-50%); z-index: -100; display: none}
+
+.down{display: block; font-size: 20px; position: absolute; left: 50%; margin-left: -70px; bottom: 15%; animation:ani 1s infinite alternate}
+@keyframes ani {
+	0% {transform: scale(1); opacity: 1; color: #fff;}
+	100% {transform: scale(1.2); opacity: 0.8; color: #888;}
+}
+
+/*about*/
+#content .about{text-align: center; position: relative; top: 200px}
+#content .about h3::after{display: block; width: 500px; height: 2px; background: #fff; content: ''; position: absolute; left: 50%; bottom: -15px; margin-left: -250px}
+#content .about p{font-family: 'Noto Serif KR', serif; margin-bottom: 70px}
+#content .about a{display: block; padding: 10px 0; font-weight: 700; font-size: 22px; background: #eee; width: 130px; position: absolute; left: 50%; bottom: 70px; margin-left: -65px; color: #333}
+#content .about .hvr-bob:hover{color: rgba(45,127,167,.75)}
+
+/*series*/
+#content .series{text-align: center; margin-top: 350px}
+#content .series h3{margin-bottom: 20px}
+#content .series ul{overflow: hidden; padding: 0 5% 50px}
+#content .series ul li{float: left; width: 23.5%; margin: 50px 2% 0 0}
+#content .series ul li:nth-of-type(4n){margin-right: 0}
+#content .series ul li img{width: 100%}
+#content .series ul li h4{padding-top: 20px}
+#content .series .hvr-bob{display: none}
+
+/*producer*/
+#content .producer ul li{overflow: hidden}
+#content .producer ul li>span{width: 49%; display: block; height: 400px; background-size: cover}
+#content .producer ul li h4{font-size: 26px}
+#content .producer ul li .container{display: flex; flex-flow: row wrap; align-content:space-between; width: 49%; font-family: 'Noto Serif KR', serif; height: 400px}
+
+#content .producer ul .jk{margin-bottom: 70px}
+#content .producer ul .jk .jkimg{float: left; background: url(../images/jk.jpg)}
+#content .producer ul .jk div{float: right; margin-left: 2%}
+
+#content .producer ul .wb .wbimg{float: right; background: url(../images/wb.jpg)}
+#content .producer ul .wb div{float: left; margin-right: 2%}
+
+/*character*/
+#content .character>ul{overflow: hidden; margin-bottom: 50px}
+#content .character>ul:last-child{margin-bottom: 0}
+#content .character>ul>li{float: left; width: 22.75%; margin-right: 3%}
+#content .character>ul>li:last-of-type{margin-right: 0}
+#content .character>ul>li img{width: 100%}
+#content .character .potter li:first-of-type{margin-bottom: 14%}
+#content .character dl{font-family: 'Noto Serif KR', serif}
+#content .character dt{font-size: 22px; font-weight: 700; margin: 5% 0 10%}
+#content .character .harryinfo2,.voledmortinfo{display: none}
+
+/*gallery*/
+#content .gallery .inWrap{position: relative}
+#content .gallery .fInner{margin: 0 10%; width: 80%; overflow: hidden}
+
+#content .gallery li{float: left; width:450px; height:350px; list-style: none}
+#content .gallery li a{position: relative; height: 100%; margin-right: 5%; overflow: hidden}
+#content .gallery li span{display: block; position: absolute; width: 100%; font-weight: 400; text-align: center; bottom: -50px; color: #fff}
+
+#content .gallery .swiper-slide a{background-size: cover}
+#content .gallery li:nth-child(1) a{background: url(../images/gallery1.jpg) center center no-repeat}
+#content .gallery li:nth-child(2) a{background: url(../images/gallery2.jpg) center center no-repeat}
+#content .gallery li:nth-child(3) a{background: url(../images/gallery3.jpg) center center no-repeat}
+#content .gallery li:nth-child(4) a{background: url(../images/gallery4.jpg) center center no-repeat}
+#content .gallery li:nth-child(5) a{background: url(../images/gallery5.jpg) center center no-repeat}
+#content .gallery li:nth-child(6) a{background: url(../images/gallery6.jpg) center center no-repeat}
+
+#content .gallery .swiper-pagination{position: relative; margin-top: 65px}
+#content .gallery .swiper-pagination-progress .swiper-pagination-progressbar{background: rgba(255,255,255,.8)}
+
+#content .gallery .button a{position: absolute; top: 40%; transition: all 0.2s; color: #ccc; width: 30px; height: 30px; font-size: 50px; text-align: center}
+#content .gallery .button a:active{transform: translate(2px,2px)}
+#content .gallery .back{left: 5%}
+#content .gallery .next{right: 5%}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+
+}
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {	
+    #content section h3{font-weight: 700; font-size: 48px; margin-bottom: 50px; position: relative}
+    #content section>ul, #content>div>ul{padding: 0 3%}
+
+    /*about*/
+    #content .about{text-align: center; position: relative; margin-top: 100px}
+    #content .about h3::after{width: 430px; margin-left: -215px}
+    #content .about a{font-size: 20px}
+
+    /*series*/
+    #content .series{position: relative}
+    #content .series ul{overflow: hidden; padding: 0 5% 80px}
+    #content .series ul li{width: 31.33%; margin-right: 3%}
+    #content .series ul li:nth-of-type(3n){margin-right: 0}
+    #content .series ul li:nth-of-type(4n){margin-right: 3%}
+    #content .series ul li:nth-of-type(7),#content .series ul li:nth-of-type(8){display: none}
+    #content .series .hvr-bob{display: block; padding: 10px 0; font-weight: 700; font-size: 20px; background: #eee; width: 130px; position: absolute; left: 50%; bottom: 70px; margin-left: -65px; color: #333}
+    #content .series .hvr-bob:hover{color: rgba(45,127,167,.75)}
+
+    /*producer*/
+    #content .producer ul li>span{height: 257px; background-size: 49% 257px}
+    #content .producer ul li p>span{display: none}
+    #content .producer ul li h4{font-size: 24px}
+    #content .producer ul li .container{display: flex; flex-flow: row wrap; align-content:space-between; width: 49%; font-family: 'Noto Serif KR', serif; height: 257px}
+
+    #content .producer ul .jk .jkimg{background: url(../images/jk1024.jpg)}
+    #content .producer ul .wb .wbimg{background: url(../images/wb1024.jpg)}
+
+    /*character*/
+    #content .character .cha1>li:nth-of-type(1){width: 23.5%; margin-right: 2%}
+    #content .character .cha1>li:nth-of-type(2){width: 23.5%; margin-right: 2%}
+    #content .character .cha1>li:nth-of-type(3){width: 49%; margin-right: 0}
+    #content .character .cha1>li:last-of-type{display: none}
+
+    #content .character .cha2>li:first-of-type{display: none}
+    #content .character .cha2>li:nth-of-type(2){width: 49%; margin-right: 2%}
+    #content .character .cha2>li:nth-of-type(3){width: 23.5%; margin-right: 2%}
+    #content .character .cha2>li:nth-of-type(4){width: 23.5%; margin-right: 0}
+    
+    #content .character .potter li:first-of-type{margin-bottom: 13%}
+    #content .character dt{font-size: 20px}
+    #content .character dd{font-size: 14px}
+
+
+    /*gallery*/
+    #content .gallery li{width:400px; height:300px}
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+    #content section{background: rgba(6,6,6,.8)}
+    #content section h3{font-size: 40px}
+    
+    /*about*/
+    #content .about h3::after{width: 360px; margin-left: -180px}
+
+    /*producer*/
+    #content .producer{display: none}
+
+    /*character*/
+    #content .character .cha1>li:nth-of-type(1){width: 49%; margin-right: 2%}
+    #content .character .cha1>li:nth-of-type(2){display: none}
+    #content .character .cha1>li:nth-of-type(3){width: 49%; margin-right: 0}
+    #content .character .cha1>li:nth-of-type(4){display: none}
+
+    #content .character .cha2>li:nth-of-type(1){display: none}
+    #content .character .cha2>li:nth-of-type(2){width: 49%; margin-right: 2%}
+    #content .character .cha2>li:nth-of-type(3){display: none}
+    #content .character .cha2>li:nth-of-type(4){width: 49%;}
+    
+    #content .character .potterinfo{display: none}
+    #content .character .voledmortinfo{display: block}
+    
+    #content .character dt{margin-top: 0}
+
+    /*gallery*/
+    #content .gallery .back{left: 3%}
+    #content .gallery .next{right: 3%}
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    #content section{padding: 70px 0; margin-bottom: 70px}
+    #content section h3{font-size: 30px; margin-bottom: 50px}
+    #content section h3:nth-of-type(2){margin-bottom: 30px}
+    #content section>ul, #content>div>ul{padding: 0 3%}
+
+    /*about*/
+    #content .about{top: 100px}
+    #content .about h3::after{ width: 260px; margin-left: -130px}
+    #content .about p{font-size: 14px}
+    #content .about a{font-size: 16px; width: 100px; margin-left: -50px}
+
+    /*series*/
+    #content .series{margin-top: 200px}
+    #content .series h3{margin-bottom: 0}
+    #content .series ul{padding: 0 3% 70px}
+    #content .series ul li{width: 48.5%; margin-right: 3%}
+    #content .series ul li:nth-of-type(2n){margin-right: 0}
+    #content .series ul li:nth-of-type(3n){margin-right: 3%}
+    #content .series ul li:nth-of-type(5),#content .series ul li:nth-of-type(6){display: none}
+    #content .series ul li h4{padding-top: 10px}
+    #content .series .hvr-bob{font-size: 16px; width: 100px; margin-left: -50px}
+    
+    /*character*/
+    #content .character .cha1{margin-bottom: 30px}
+    #content .character .cha1>li:nth-of-type(1){width: 49%; margin-right: 2%}
+    #content .character .cha1>li:nth-of-type(3){width: 49%; margin-right: 0}
+    
+    #content .character .harryinfo1{display: none}
+    #content .character .harryinfo2{display: block}
+    
+    #content .character .cha2>li:nth-of-type(2){width: 100%}
+    #content .character .cha2>li:nth-of-type(4){display: none}
+  
+    /*gallery*/
+    #content .gallery .button a{font-size: 40px}
+    #content .gallery .back{left: 2%}
+    #content .gallery .next{right: 2%}
+    
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+	#wrap { min-width:320px; }
+}

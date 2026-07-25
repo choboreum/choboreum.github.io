@@ -1,0 +1,30 @@
+<footer id="footer">
+    <address>Copyright 2022. choboreum all rights reserved.</address>
+    <div class="top-btn"><button onclick="moveTop();">TOP</button></div>
+</footer>
+
+<script>
+    $(function() {
+        $(window).on('load', function () {
+            $(window).on('scroll', scrEff);
+            scrEff();
+        });
+    });
+
+    function scrEff(){
+        $(window).on('scroll', function () {
+            var scMove=$(window).scrollTop() + $(window).height();
+            var contentHeight=$('.items').offset().top;
+            var topBtn=$('.top-btn button');
+            if(contentHeight < scMove) topBtn.addClass('on');
+            else {}
+        });
+    }
+    
+
+    function moveTop(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500);
+    }
+</script>

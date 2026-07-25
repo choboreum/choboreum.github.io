@@ -1,0 +1,17 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# macOS / editor
+.DS_Store
+.idea/
+
+# Dependencies / build output
+node_modules/
+.vite/
+dist/
+
+# Private resume
+resume/application.html
+resume/images/boreum.jpg

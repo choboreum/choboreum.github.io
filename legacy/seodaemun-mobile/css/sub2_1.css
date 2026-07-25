@@ -1,0 +1,61 @@
+#content .content_area{margin: 77px 0 100px; line-height: 1.5em}
+
+#content .title_area{margin-top: 77px; color: #fff; background: rgb(150,180,95); padding: 20px 0}
+#content .title_area h2{font-size: 20px; font-weight: 700; text-align: center}
+
+#content .content_area section ul{margin: 0 5%}
+#content .content_area section{overflow: hidden; margin-bottom: 70px}
+#content .content_area section>h3{font-family: 'Nanum Gothic', sans-serif; font-size: 18px; padding: 30px 0; color: #666; text-align: center; position: relative; font-weight: 700}
+
+#content .content_area dl{outline: 1px solid #ccc; outline-offset: -1px; margin: 20px 5%; padding: 20px 30px; text-align: center}
+#content .content_area dl:first-of-type{margin-top: 0}
+#content .content_area dt{margin-bottom: 15px; font-weight: 700; border-bottom: 1px solid #ccc; padding-bottom: 15px}
+#content .content_area dd span{font-size: 12px; color: #666}
+
+#content .content_area table{margin: 0 5%; width: 90%}
+#content .content_area table thead{background: #eee}
+#content .content_area table thead th:first-child,#content .content_area table tbody th{width: 35%}
+#content .content_area table thead th:nth-child(2),#content .content_area table tbody td:first-of-type{width: 15%}
+#content .content_area table thead th:nth-child(3),#content .content_area table tbody td:last-of-type{width: 40%}
+#content .content_area table th,#content .content_area table td{border: 1px solid #ccc; padding: 8px 0; text-align: center}
+#content .content_area table td{font-size: 12px}
+
+
+#content .content_area ul{outline: 1px solid #ccc; outline-offset: -1px; padding: 20px 5%}
+#content .content_area ul li{margin-bottom: 20px; text-align: justify; overflow: hidden; text-align: center}
+#content .content_area ul li p{margin-top: 5px}
+
+#content .content_area ul li .slash1{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash1_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash1{background: url(../images/sub2/slash1_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash2{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash2_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash2{background: url(../images/sub2/slash2_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash3{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash3_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash1{background: url(../images/sub2/slash3_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash4{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash4_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash4{background: url(../images/sub2/slash4_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash5{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash5_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash1{background: url(../images/sub2/slash5_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash6{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash6_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash6{background: url(../images/sub2/slash6_x2.jpg); background-size: 50px 50px}
+}
+
+#content .content_area ul li .slash7{display: block; width: 50px; height: 50px; background: url(../images/sub2/slash7_x1.jpg) no-repeat; position: relative; left: 50%; margin-left: -25px}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    #content .content_area ul li .slash7{background: url(../images/sub2/slash7_x2.jpg); background-size: 50px 50px}
+}

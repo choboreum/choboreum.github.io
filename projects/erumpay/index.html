@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이룸페이 Case Study | CHOBOREUM PORTFOLIO</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../resume/images/favicon.ico">
+    <link rel="stylesheet" href="../../css/portfolio.css">
+</head>
+<body class="case-study-body">
+<header class="site-header case-study-header">
+    <a class="brand" href="../../">← Portfolio</a>
+</header>
+<main class="case-study-page">
+    <section class="case-study-hero">
+        <div class="case-study-hero-copy">
+            <img class="case-study-logo" src="./erumpay-logo.png" alt="ErumPay">
+            <p class="eyebrow">Case Study</p>
+            <p class="case-page-title">ErumPay</p>
+            <p class="case-study-subtitle">QR 기반 간편결제 서비스</p>
+            <p class="lead">
+                사용자에게는 하나의 결제 경험으로 보이지만, 서비스 내부에서는 화면 흐름, 가맹점 정보, 결제 책임이 유기적으로 연결되어야 했습니다.<br />
+                저는 프론트엔드 PL로 결제 화면과 사용자 흐름을 주도했으며, merchant-service를 중심으로 백엔드 API 구현과 데이터 정합성 처리도 함께 담당했습니다.
+            </p>
+        </div>
+        <aside class="case-study-meta" aria-label="Project summary">
+            <dl>
+                <div>
+                    <dt>Program</dt>
+                    <dd>LG CNS AM Inspire Camp</dd>
+                </div>
+                <div>
+                    <dt>Award</dt>
+                    <dd>최종 프로젝트 대상</dd>
+                </div>
+                <div>
+                    <dt>Role</dt>
+                    <dd>Frontend PL · Backend</dd>
+                </div>
+                <div>
+                    <dt>Contribution</dt>
+                    <dd>
+                        <ul class="case-meta-list">
+                            <li>React Native 주요 사용자 여정 구현</li>
+                            <li>공통 UI·상태 관리</li>
+                            <li>merchant-service REST API 구현</li>
+                            <li>사업자번호 중복 등록 방지</li>
+                        </ul>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Tech</dt>
+                    <dd>React Native · Spring Boot · Spring Data JPA · MySQL</dd>
+                </div>
+            </dl>
+        </aside>
+    </section>
+
+    <section id="overview" class="case-chapter">
+        <div class="chapter-heading">
+            <span>00</span>
+            <div>
+                <p class="eyebrow">Project Overview</p>
+                <p class="chapter-title">QR 기반 결제 서비스를 기획부터 구현까지 함께하며, 결제 화면과 merchant-service를 중심으로 사용자 흐름을 만든 프로젝트입니다.</p>
+            </div>
+        </div>
+        <div class="case-intro-grid">
+            <article>
+                <p class="step-label">Service</p>
+                <strong class="case-card-title">QR 기반 간편결제</strong>
+                <p>사용자는 QR로 결제를 요청하고, 서비스는 결제 승인과 가맹점 정보를 연결해 결제 흐름을 완성합니다.</p>
+            </article>
+            <article>
+                <p class="step-label">Target</p>
+                <strong class="case-card-title">일반 결제 사용자 / 가맹점 관리자 / PG 관리자</strong>
+                <p>결제 사용자, 가맹점 운영자, 관리자 관점에서 필요한 데이터와 기능 책임을 구분했습니다.</p>
+            </article>
+            <article>
+                <p class="step-label">Focus</p>
+                <strong class="case-card-title">개발자로서의 판단</strong>
+                <p>화면 흐름, 컴포넌트 기준, API 구현, 데이터 정합성 방어를 중심으로 정리합니다.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="problem-solving" class="case-chapter case-chapter-strong">
+        <div class="chapter-heading">
+            <span>01</span>
+            <div>
+                <p class="eyebrow">Problem Solving Highlights</p>
+                <p class="chapter-title">화면, API, 상태 흐름이 어긋난 지점을 찾아 결제 경험이 끊기지 않도록 정리했습니다.</p>
+            </div>
+        </div>
+        <div class="problem-highlight-layout">
+            <article class="problem-highlight-card problem-highlight-card-feature">
+                <p class="step-label">Representative Case / User Experience</p>
+                <strong class="case-card-title">QR 결제 상점명 표시 오류</strong>
+                <figure class="problem-evidence">
+                    <img src="./evidence/merchant-name-real-error.png" alt="QR 결제 화면에서 string과 비정상 금액이 표시된 실제 오류 화면">
+                </figure>
+                <dl class="problem-flow">
+                    <div>
+                        <dt>문제</dt>
+                        <dd>QR 결제 화면에서 실제 상점명이 아니라 order_name이 노출되었습니다.</dd>
+                    </div>
+                    <div>
+                        <dt>원인</dt>
+                        <dd>결제 응답만으로는 merchant_name을 알 수 없어 merchant_id 기반 조회가 필요했습니다.</dd>
+                    </div>
+                    <div>
+                        <dt>해결</dt>
+                        <dd>merchant-service 조회 흐름을 연결해 결제 화면에 올바른 상점명을 표시했습니다.</dd>
+                    </div>
+                    <div>
+                        <dt>검증</dt>
+                        <dd>QR 진입 후 결제 화면에서 merchant_name이 표시되는지 확인했습니다.</dd>
+                    </div>
+                </dl>
+            </article>
+            <div class="problem-highlight-grid">
+                <article class="problem-highlight-card">
+                    <p class="step-label">Error Handling</p>
+                    <strong class="case-card-title">서버 내부 오류 메시지 노출 방지</strong>
+                    <dl class="problem-flow">
+                        <div>
+                            <dt>문제</dt>
+                            <dd>결제 실패 화면에 서버 내부 메시지가 그대로 노출될 수 있었습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>원인</dt>
+                            <dd>내부 오류 코드와 사용자 노출 메시지의 책임이 분리되지 않았습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>해결</dt>
+                            <dd>결제 화면에서 사용할 사용자용 오류 메시지 매핑 기준을 정리했습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>검증</dt>
+                            <dd>결과 화면에서 내부 오류 코드가 직접 노출되지 않는지 확인했습니다.</dd>
+                        </div>
+                    </dl>
+                </article>
+                <article class="problem-highlight-card">
+                    <p class="step-label">Payment Flow</p>
+                    <strong class="case-card-title">원격결제 이어하기와 멱등성 처리</strong>
+                    <dl class="problem-flow">
+                        <div>
+                            <dt>문제</dt>
+                            <dd>원격결제 실패 후 이어가기에서 새 결제처럼 처리되는 오류가 발생했습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>원인</dt>
+                            <dd>기존 remote_request_id, payer_payment_id, idempotency_key를 이어받지 못했습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>해결</dt>
+                            <dd>기존 payment_id를 재사용하는 resume flow로 결제 재진입 기준을 분리했습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>검증</dt>
+                            <dd>이어가기 진입 시 기존 결제 수단 선택 화면으로 이동하는지 확인했습니다.</dd>
+                        </div>
+                    </dl>
+                </article>
+                <article class="problem-highlight-card">
+                    <p class="step-label">State Management</p>
+                    <strong class="case-card-title">더치페이 타임아웃·상태 처리</strong>
+                    <dl class="problem-flow">
+                        <div>
+                            <dt>문제</dt>
+                            <dd>생성 직후 더치페이에서 timeout 알럿이 너무 일찍 표시되었습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>원인</dt>
+                            <dd>timeout_at 존재 여부와 실제 만료 시간을 구분하지 못해 화면 상태가 어긋났습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>해결</dt>
+                            <dd>상태값과 시간 비교 기준을 분리해 진행 중/만료 판단을 보정했습니다.</dd>
+                        </div>
+                        <div>
+                            <dt>검증</dt>
+                            <dd>새 세션과 만료 세션에서 알럿과 메인 이동 흐름을 확인했습니다.</dd>
+                        </div>
+                    </dl>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="case-chapter architecture-section">
+        <div class="chapter-heading">
+            <span>02</span>
+            <div>
+                <p class="eyebrow">Architecture</p>
+                <p class="chapter-title">결제 화면에서 필요한 가맹점 정보를 merchant-service API로 조회하고 관리했습니다.</p>
+            </div>
+        </div>
+        <div class="architecture-map" aria-label="ErumPay architecture">
+            <span>React Native App</span>
+            <svg class="architecture-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+            </svg>
+            <span>merchant-service</span>
+            <svg class="architecture-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+            </svg>
+            <span>MySQL</span>
+        </div>
+        <div class="tech-grid">
+            <article>
+                <strong class="case-card-title">App Flow</strong>
+                <p>React Native 화면에서 카드 등록, 추천 카드 확인, QR 결제 요청으로 이어지는 사용자 흐름을 구성했습니다.</p>
+            </article>
+            <article>
+                <strong class="case-card-title">Merchant API</strong>
+                <p>프로젝트 공통 호출 경로를 통해 merchant-service와 연결하고, 결제 화면에 필요한 가맹점 데이터를 확인했습니다.</p>
+            </article>
+            <article>
+                <strong class="case-card-title">Persistence</strong>
+                <p>JPA와 MySQL을 사용하고, DB 제약 조건으로 데이터 무결성을 보강했습니다.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="role" class="case-chapter">
+        <div class="chapter-heading">
+            <span>03</span>
+            <div>
+                <p class="eyebrow">My Role</p>
+                <p class="chapter-title">프론트엔드 PL로 결제 흐름을 주도하고, merchant-service 구현을 함께 담당했습니다.</p>
+            </div>
+        </div>
+        <div class="implementation-layout">
+            <article class="case-summary">
+                <p class="project-type">Frontend PL / Payment Flow</p>
+                <strong class="case-card-title">기획부터 화면 구현까지 이어진 결제 흐름</strong>
+                <ul class="plain-list">
+                    <li>요구사항 분석과 BRD/FRS 작성 참여</li>
+                    <li>ERD, 화면설계서, 컴포넌트 가이드 작성</li>
+                    <li>프론트엔드 PL로 결제 흐름 주도</li>
+                    <li>카드 등록, 추천, 결제 요청 화면 흐름 설계</li>
+                    <li>추천 카드와 등록 카드 상태 분리</li>
+                    <li>SSE 추천 응답을 결제 화면에 연결</li>
+                </ul>
+            </article>
+            <article class="case-summary">
+                <p class="project-type">Backend Scope</p>
+                <strong class="case-card-title">merchant-service 구현 범위</strong>
+                <ul class="plain-list">
+                    <li>가맹점 등록/조회/수정/삭제 API 구현</li>
+                    <li>merchant-service 주요 REST API 구현</li>
+                    <li>결제 흐름에 필요한 요청/응답 형식 확인</li>
+                    <li>JPA + MySQL 기반 데이터 저장 처리</li>
+                    <li>Dockerfile 및 compose 기반 로컬 실행 환경 구성</li>
+                    <li>환경변수 기반 DB 연결 확인</li>
+                    <li>사업자번호 중복 등록 방어</li>
+                </ul>
+            </article>
+            <div class="api-table-wrap">
+                <table class="api-table">
+                    <caption>merchant-service 주요 API</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Scope</th>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Purpose</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Register</td>
+                        <td>가맹점 등록</td>
+                        <td>사업자번호와 기본 정보로 가맹점 생성</td>
+                    </tr>
+                    <tr>
+                        <td>Read</td>
+                        <td>가맹점 조회</td>
+                        <td>결제 및 관리 화면에 필요한 정보 제공</td>
+                    </tr>
+                    <tr>
+                        <td>Update</td>
+                        <td>가맹점 수정</td>
+                        <td>운영 중 변경 정보 반영</td>
+                    </tr>
+                    <tr>
+                        <td>Delete</td>
+                        <td>가맹점 삭제</td>
+                        <td>관리 정책에 따른 데이터 처리</td>
+                    </tr>
+                    <tr>
+                        <td>Validation</td>
+                        <td>중복 등록 방지</td>
+                        <td>사업자번호 기준 데이터 정합성 유지</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="case-data-panel">
+            <div>
+                <p class="step-label">Data Model</p>
+                <strong class="case-card-title">ERD는 가맹점 식별과 중복 방어에 필요한 필드를 중심으로 정리했습니다.</strong>
+            </div>
+            <ul>
+                <li><strong>merchantId</strong> 가맹점 데이터를 식별하는 기본 키</li>
+                <li><strong>businessNumber</strong> 중복 등록을 막아야 하는 핵심 값</li>
+                <li><strong>status / profile</strong> 결제와 관리 화면에서 사용하는 상태와 기본 정보</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="result" class="case-chapter case-result-section">
+        <div class="chapter-heading">
+            <span>04</span>
+            <div>
+                <p class="eyebrow">Result</p>
+                <p class="chapter-title">프론트엔드 PL과 merchant-service 개발을 맡아 주요 결제 흐름을 구현했고, 최종 프로젝트 대상을 수상했습니다.</p>
+            </div>
+        </div>
+        <div class="case-result-grid">
+            <article>
+                <strong>성과</strong>
+                <ul>
+                    <li>LG CNS AM Inspire Camp 최종 프로젝트 대상</li>
+                    <li>QR 기반 간편결제 서비스 대표 프로젝트 정리</li>
+                </ul>
+            </article>
+            <article>
+                <strong>내 역할</strong>
+                <ul>
+                    <li>Frontend PL로 결제 화면과 사용자 흐름 주도</li>
+                    <li>merchant-service REST API 구현</li>
+                    <li>결제 화면, API 응답, 상태 전이 오류 확인</li>
+                </ul>
+            </article>
+            <article>
+                <strong>산출물</strong>
+                <ul>
+                    <li>BRD/FRS, ERD, 화면설계서</li>
+                    <li>컴포넌트 가이드, 결제 플로우 기준</li>
+                    <li>REST API와 사업자번호 중복 등록 방어</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section id="trouble" class="case-chapter trouble-section">
+        <div class="chapter-heading">
+            <span>05</span>
+            <div>
+                <p class="eyebrow">Engineering Notes</p>
+                <p class="chapter-title">문제를 어떻게 기록하고 판단했는지 보여주는 개발 과정 기록입니다.</p>
+            </div>
+        </div>
+        <div class="detail-log-panel">
+            <article>
+                <p class="step-label">Troubleshooting Log</p>
+                <strong class="case-card-title">통합 테스트 이슈를 원인·해결·검증 기준으로 기록했습니다.</strong>
+                <p>오류를 단순 현상으로 남기지 않고 화면, API 응답, 상태 전이 기준에서 확인해 이후 설명 가능한 근거로 만들었습니다.</p>
+            </article>
+            <article>
+                <p class="step-label">Project Documents</p>
+                <strong class="case-card-title">BRD, FRS, ERD, 화면설계서 등 산출물을 함께 정리했습니다.</strong>
+                <p>본문에서는 대표 문제 해결 사례만 보여주고, 긴 로그와 보조 자료는 면접에서 흐름을 설명할 때 활용할 수 있게 분리했습니다.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="retrospective" class="case-chapter retrospective-section">
+        <div class="chapter-heading">
+            <span>06</span>
+            <div>
+                <p class="eyebrow">Retrospective</p>
+                <p class="chapter-title">운영 경험은 서비스 구현에서도 어떤 흐름과 데이터가 흔들리면 안 되는지 판단하는 기준이 되었습니다.</p>
+            </div>
+        </div>
+        <div class="retrospective-grid">
+            <article>
+                <strong class="case-card-title">좋았던 점</strong>
+                <p>결제 화면 흐름부터 가맹점 API, DB 제약, 서비스 연결까지 하나의 사용자 경험으로 묶어 볼 수 있었습니다.</p>
+            </article>
+            <article>
+                <strong class="case-card-title">배운 점</strong>
+                <p>MSA에서는 기능 구현뿐 아니라 서비스 경계, API 계약, 예외 응답, 데이터 정합성이 함께 설계되어야 한다는 점을 배웠습니다.</p>
+            </article>
+            <article>
+                <strong class="case-card-title">다음 개선</strong>
+                <p>API 문서, 테스트 케이스, ERD, 서비스 간 요청 계약을 더 명확한 산출물로 보강해 설명 가능한 근거를 늘릴 수 있습니다.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="github" class="case-chapter case-github-section">
+        <div class="chapter-heading">
+            <span>07</span>
+            <div>
+                <p class="eyebrow">GitHub</p>
+                <p class="chapter-title">코드는 프로젝트 맥락을 이해한 뒤 확인할 수 있도록 Case Study 마지막에 배치했습니다.</p>
+            </div>
+        </div>
+        <div class="github-panel">
+            <a href="https://github.com/choboreum" target="_blank" rel="noreferrer">
+                <span>GitHub Profile</span>
+                <strong>github.com/choboreum</strong>
+            </a>
+            <a href="https://github.com/ErumPay" target="_blank" rel="noreferrer">
+                <span>Project Repositories</span>
+                <strong>프론트엔드와 merchant-service 저장소 확인</strong>
+            </a>
+            <a href="../../" class="back-link">← 메인 포트폴리오로 돌아가기</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

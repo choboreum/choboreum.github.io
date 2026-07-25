@@ -1,0 +1,116 @@
+<?
+	session_start(); 
+    @extract($_POST);
+    @extract($_GET);
+    @extract($_SESSION);    
+?>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+
+<title>서대문자연사박물관 Mobile Web</title>
+
+<link rel="apple-touch-icon-precomposed" href="app_icon.png">
+<link rel="apple-touch-startup-image" href="startup_x1.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/sub2_2.css">
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="js/prefixfree.min.js"></script>
+
+<script>
+  // <![CDATA[
+  try {
+   window.addEventListener('load', function(){
+    setTimeout(scrollTo, 0, 0, 1); 
+   }, false);
+  } 
+  catch(e) {}
+  // ]]>
+ </script>
+ <script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
+ <!--[if lt IE 9]> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <? include "head.html" ?>
+    
+    <article id="content">
+       <div class="content_area">
+        <div class="title_area">
+           <h3 class="hidden">기관소개</h3>
+           <h2>관람도우미</h2>
+        </div>
+        <section class="swiper-container contlist">
+            <h3>전시해설</h3>
+            <ul class="image swiper-wrapper">
+                <li class="swiper-slide"><img src="images/sub2/helper1_x2.jpg" alt=""></li>
+                <li class="swiper-slide"><img src="images/sub2/helper2_x2.jpg" alt=""></li>
+                <li class="swiper-slide"><img src="images/sub2/helper3_x2.jpg" alt=""></li>
+            </ul>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+        <div class="textbox">
+            <ul>
+                <li>운영시간 : 오전 11시, 오후 2시, <span>오후 4시(주말만 운영)</span></li>
+                <li>소요시간 : 한시간 가량 소요</li>
+                <li>전시설명을 듣기 원하는 관람객께서는 정해진 시간에 1층 중앙홀 전시설명 대기장소에서 기다리시면 됩니다.<br><span>* 전시설명은 '개인관람객'에 한해 가능함.</span></li>
+            </ul>
+        </div>
+        
+        <section class="swiper-container contlist">
+            <h3>지원서비스</h3>  
+            <ul class="image swiper-wrapper"> 
+                <li class="swiper-slide"><img src="images/sub2/helper4_x2.jpg" alt="휠체어, 보청기, 유모차"></li>
+                <li class="swiper-slide"><img src="images/sub2/helper5_x2.jpg" alt="물품보관소"></li>
+                <li class="swiper-slide"><img src="images/sub2/helper6_x2.jpg" alt="테라스"></li>
+            </ul>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+        <div class="textbox">
+            <ul>
+                <li>장애인, 노약자를 위한 보청기, 휠체어/유아(24개월미만)을 위한 유모차를 안내데스크에서 무료로 대여해 드립니다. <span>(* 전동휠체어 미보유)</span></li>
+                <li>소지품과 여행용 가방 등은 물품보관함에 보관하실 수 있습니다.</li>
+                <li>간단한 음료와 간식을 판매하는 카페테리아 외에 도시락 등의 지참하신 음식물을 드실 수 있는 공간으로 3층 나무테라스(우천시 사용불가)와 지하 중층 80석 규모의 나무홀이 있습니다. <span>(* 놀이방은 없습니다.)</span></li>
+            </ul>
+        </div>
+        </div>
+    </article>
+    
+  <? include "foot.html" ?>
+ <script src="js/jquery-1.12.4.min.js"></script>
+ <script src="js/jquery-migrate-1.4.1.min.js"></script>
+ <script src="js/nav_new.js"></script>
+ <script src="js/topmenu.js"></script>
+ 
+ <!--<script src="js/tab.js"></script>-->
+ <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+    });
+ </script>
+</body>
+</html>

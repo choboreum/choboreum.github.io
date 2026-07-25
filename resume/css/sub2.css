@@ -1,0 +1,10 @@
+.wrapper {
+  height: 400vh;
+  text-align: center;
+}
+.wrapper .sub1-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}/*# sourceMappingURL=sub2.css.map */

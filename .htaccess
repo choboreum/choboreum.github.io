@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Cafe24 public pages are moving to GitHub Pages.
+# Keep only the private resume page and the assets it needs on Cafe24.
+RewriteCond %{HTTP_HOST} ^(www\.)?choboreum\.cafe24\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/resume/application\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^/resume/css/ [NC]
+RewriteCond %{REQUEST_URI} !^/resume/font/ [NC]
+RewriteCond %{REQUEST_URI} !^/resume/images/boreum\.jpg$ [NC]
+RewriteCond %{REQUEST_URI} !^/resume/favicon\.ico$ [NC]
+RewriteCond %{REQUEST_URI} !^/boreum/image/boreum2\.png$ [NC]
+RewriteRule ^ https://choboreum.github.io/ [R=302,L]

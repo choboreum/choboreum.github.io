@@ -1,0 +1,107 @@
+/* Reset CSS  */
+* { margin:0; padding:0; border:0; outline:0; vertical-align:top;
+-webkit-text-size-adjust:none;  }
+body {font-family: 'Roboto', sans-serif; font-weight: 400; font-size:18px; color:#fff;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+ul, ol, dl { list-style:none; }
+img, video {border:0; vertical-align:top; }
+a, a:link {color:#fff;text-decoration:none}
+a:visited { color:#fff; }
+a:hover, a:active {color:#fff;text-decoration:none; }
+table { border-collapse:collapse; border-spacing:0; }
+input, select { vertical-align:middle; }
+label { cursor:pointer; }
+.blind,legend,hr,caption { display:block; overflow:hidden; position:absolute; top:0; left:-1000em; }
+i,em,address { font-style:normal; font-weight:normal; }
+p,li,dd{ line-height:2em}
+.hidden,#skipNav{display: block; position: absolute; left: -1000%; top: 0; width: 1px; height: 1px; overflow: hidden; color: #fff}
+a{display: block}
+
+/*
+font-family: 'Noto Serif KR', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Junge', serif;
+*/
+
+/* 헤더공통영역 */
+#headerArea{position: fixed; z-index: 30; height: 100px; background: rgba(0,0,0,.8); left: 0; top: 0; width: 100%}
+#headerArea	.headerInner{width: 90%; margin: 0 5%; overflow: hidden}	
+#headerArea h1 a{width: 240px; height: 78px; background: url(../images/logo.png) no-repeat; text-indent: -999px; overflow: hidden; color: #fff; margin: 15px 0; float: left}
+
+#headerArea #gnb{float: right; margin-top: 30px}
+#headerArea #gnb ul{overflow: hidden}
+#headerArea #gnb ul li{float: left; margin-right: 25px}
+#headerArea #gnb ul li:last-child{margin-right: 0}
+#headerArea #gnb ul li h3 a{color: #fff; font-size: 24px; font-family: 'Noto Sans JP', sans-serif}
+
+#headerArea .menuOpen{position:absolute; right:20px; top:20px; display:none}/*나중에 모바일에서 풀어주면 되기 때문에 처음에는 display:none으로 해주면 됨*/
+
+/* 푸터공통영역 */
+#footerArea{text-align: center; background: #181818; position: relative}
+#footerArea .top_move{width: 80px; height: 40px; border-radius: 50%; font-weight: 700; background: #181818; position: absolute; left: 50%; margin-left: -40px; top: -40px; color: #fff; padding: 20px 0}
+#footerArea ul{overflow: hidden; width: 370px; position: relative; left: 50%; margin-left: -185px; top: 30px}
+#footerArea ul li{float: left}
+#footerArea ul li a{text-indent: -999px; overflow: hidden; color: #fff; float: left}
+#footerArea .wblogo{width: 114px; height: 100px; background: url(../images/footerlogo1.png) no-repeat; margin-right: 30px}
+#footerArea .hplogo{width: 225px; height: 95px; background: url(../images/footerlogo2.png) no-repeat}
+#footerArea p{clear: both; padding: 50px 0 30px}
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+	
+}
+
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+	body {font-size: 16px}
+    
+    #headerArea{height: 75px}
+    #headerArea	.headerInner{width: 94%; margin: 0 3%}	
+    #headerArea h1 a{width: 154px; height: 51px; background-size: 154px 51px}
+
+    #headerArea #gnb{margin-top: 20px}
+    #headerArea #gnb ul li{margin-right: 15px}
+    #headerArea #gnb ul li h3 a{font-size: 20px}
+    
+    #footerArea ul{width: 250px; margin-left: -125px}
+    #footerArea .wblogo{width: 74px; height: 65px; background-size: 74px 65px; margin-right: 25px}
+    #footerArea .hplogo{width: 145px; height: 61px; background-size: 145px 61px}
+    
+    #content section{width: 94%; margin: 0 3%; padding: 50px 0 70px; margin-bottom: 100px}
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+	
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+    .down{bottom: 10%}
+    body {font-size: 14px}
+    
+    #headerArea{height: 60px}
+    #headerArea	.headerInner{width: 96%; margin: 0 2%}	
+    #headerArea h1 a{width: 97px; height: 33px; background-size: 97px 33px}
+    #headerArea #gnb ul li h3 a{font-size: 22px}
+
+    #headerArea .menuOpen{display: block; font-size: 24px}
+    #headerArea .mainMenu{width:100%; background:rgba(0,0,0,.5); display:none; position:absolute; top:60px; left:0; padding-top: 10px}
+    #headerArea .mainMenu li{float:none; width: 100%; margin-bottom:10px; text-align:center; padding: 10px 0}
+    
+    #footerArea .top_move{width: 60px; height: 50px; padding: 10px 0; top: -30px; margin-left: -30px}
+    #footerArea ul{width: 160px; margin-left: -80px}
+    #footerArea ul p{font-size: 12px}
+    #footerArea .wblogo{width: 47px; height: 42px; background-size: 
+    47px 42px; margin-right: 15px}
+    #footerArea .hplogo{width: 91px; height: 39px; background-size: 91px 39px}
+    
+	#wrap{overflow: hidden; margin: 0 auto}
+    #content section{width: 96%; margin: 0 2%; margin-bottom: 100px}	
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+	#wrap { min-width:320px; }
+}
