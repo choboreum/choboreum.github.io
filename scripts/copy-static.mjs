@@ -1,7 +1,7 @@
 import { cp, mkdir } from "node:fs/promises";
 import { sep } from "node:path";
 
-const staticPaths = ["resume", "guide", "legacy", "projects"];
+const staticPaths = ["css", "resume", "guide", "legacy", "projects"];
 const privateStaticFiles = new Set([
   ["resume", "application.html"].join(sep),
   ["resume", "images", "boreum.jpg"].join(sep),
