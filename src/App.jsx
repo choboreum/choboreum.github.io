@@ -10,7 +10,7 @@ const navItems = [
 const profileSummary = [
   ["Experience", "5년 웹 퍼블리싱/운영 실무"],
   ["Project", "10개+ 실무 프로젝트 참여"],
-  ["Position", "서비스 흐름을 API와 데이터 구조로 구현"],
+  ["Focus", "프론트엔드 개발 · 웹 접근성"],
 ];
 
 const careerMetrics = [
@@ -30,49 +30,41 @@ const workingStyles = [
   },
   {
     number: "02",
-    title: "작업 기준화",
-    description: "네이밍, 폴더 구조, 컴포넌트 기준을 문서화해 개인 작업 방식을 팀 기준으로 확장했습니다.",
-  },
-  {
-    number: "03",
     title: "화면 구현",
     description: "반응형, 적응형, 브랜드형 웹을 구현하며 기획, 디자인, 개발 사이의 전달 비용을 줄였습니다.",
   },
   {
+    number: "03",
+    title: "API 연동과 예외 처리",
+    description: "도메인의 API를 구현하며 데이터 흐름과 정합성을 함께 고려했습니다.",
+  },
+  {
     number: "04",
-    title: "백엔드 확장",
-    description: "결제 도메인의 API를 구현하며 데이터 흐름과 정합성을 함께 고려했습니다.",
+    title: "작업 기준화",
+    description: "네이밍, 폴더 구조, 컴포넌트 기준을 문서화해 개인 작업 방식을 팀 기준으로 확장했습니다.",
   },
 ];
 
-const erumPayScope = [
-  "merchant-service REST API 구현",
-  "가맹점 등록/조회/수정/삭제",
-  "사업자번호 중복 등록 방어",
-  "React Native 주요 사용자 흐름 구현",
-  "공통 UI 및 상태 관리",
-  "Dockerfile/compose 기반 로컬 실행 확인",
+const creatorsScope = [
+  "크리에이터 6명의 소개·스티커와 회차별 목록 구성",
+  "각 크리에이터의 소속 회차로 상세 링크 연결",
+  "홈과 회차 페이지에서 이벤트 화면 재사용",
 ];
 
-const erumPayEvidence = [
+const creatorsEvidence = [
   {
-    label: "Why",
-    title: "왜 만들었는가",
-    description: "QR 결제 경험 안에서 사용자, 가맹점, 관리자 흐름을 나누고 각 서비스가 책임질 데이터를 명확히 관리해야 했습니다.",
+    title: "홈은 현재 회차로, 상세는 참여한 회차로",
+    description: "2회차를 열어도 1회차 작가를 선택한 사용자는 그 작가의 소개를 볼 수 있어야 했습니다. 홈에 표시할 회차는 한곳에서 관리하고, 목록의 상세 링크는 각 작가가 참여한 회차를 기준으로 만들었습니다.",
   },
   {
-    label: "Role",
-    title: "무엇을 맡았는가",
-    description: "프론트엔드 PL로 React Native 앱의 주요 사용자 흐름과 공통 UI, 상태 관리를 맡고, 백엔드에서는 가맹점 API 구현을 담당했습니다.",
+    title: "같은 화면을 쓰되, FAQ는 회차에 맡기기",
+    description: "홈과 회차 페이지는 공통 이벤트 화면을 사용하도록 합쳤습니다. 반면 공용 푸터가 첫 회차의 FAQ를 직접 읽는 부분은 분리했습니다. 화면 전체를 회차마다 등록하는 방식도 비교했지만, 달라지는 부분은 FAQ였기에 기존 등록 방식을 유지하고 회차에 맞는 푸터만 선택했습니다.",
   },
   {
-    label: "Proof",
-    title: "무엇을 해결했는가",
-    description: "사업자번호 중복 등록을 DB Unique Constraint와 예외 처리로 방어하고, 실패 원인을 409 Conflict로 명확히 반환했습니다.",
+    title: "새 회차를 등록하는 일은 빌드 단계에서",
+    description: "회차 폴더를 추가한 뒤 목록에도 같은 회차를 손으로 등록하던 단계를 없앴습니다. 빌드 전에 폴더를 읽어 등록 코드를 생성하는 스크립트를 작성하고, 기존 회차와 새 회차 각각에서 목록과 상세 화면이 올바르게 연결되는지 확인했습니다.",
   },
 ];
-
-const architecture = ["React Native", "REST API", "merchant-service", "MySQL"];
 
 const bootcampProjects = [
   {
@@ -100,6 +92,7 @@ const bootcampProjects = [
     description: "최종 프로젝트로 결제 도메인과 가맹점 서비스를 중심으로 백엔드 구현 범위를 가장 깊게 다룹니다.",
     role: "Frontend PL · Full Stack",
     focus: "결제 사용자 여정, 공통 UI·상태 관리, 가맹점 API",
+    award: "LG CNS AM Inspire Camp 최종 프로젝트 대상",
     featured: true,
     link: "/projects/erumpay/",
   },
@@ -167,9 +160,9 @@ const featuredWorks = [
 ];
 
 const skills = [
-  ["Frontend", "HTML, CSS, JavaScript, React, TypeScript, Zustand, Axios"],
+  ["Frontend", "Next.js, React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS"],
   ["Backend", "Java, Spring Boot, JPA, MySQL, REST API"],
-  ["Development Tools", "Docker, Git, GitHub, Swagger, Postman, IntelliJ"],
+  ["Development Tools", "Playwright E2E, Git, GitHub, Figma, Docker, Postman"],
 ];
 
 const contacts = [
@@ -225,13 +218,13 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="eyebrow">서비스 흐름을 API와 데이터 구조로 구현하는 개발자</p>
+        <p className="eyebrow">조보름 · 개발자 포트폴리오</p>
         <h1>
-          운영 경험으로 사용자의 흐름을 이해하고, <span className="no-break">그 흐름을</span> 구현 가능한 구조로 옮깁니다.
+          웹 서비스를 운영한 경험을 바탕으로, 사용자가 보고 쓰는 화면을 만듭니다.
         </h1>
         <p className="lead">
-          5년간 웹 서비스를 구현하고 운영하며 화면 뒤의 요청, 데이터, 예외 상황을 함께 보게 되었습니다.<br />
-          이제는 React 화면 구현과 Spring 기반 API 설계를 연결해, 서비스가 실제로 동작하는 흐름을 만드는 개발자를 지향합니다.
+          반응형 웹과 결제 화면을 구현하고 운영해 왔습니다.<br />
+          화면을 만들 때는 사용자의 입력이 어떻게 처리되는지, 오류가 나면 무엇을 보여줄지까지 함께 살핍니다.
         </p>
         <div className="hero-actions">
           <a className="button primary" href="#case-study">Case Study 보기</a>
@@ -294,29 +287,25 @@ function WorkingStyle() {
 function CaseStudy() {
   return (
     <section id="case-study" className="section case-section">
-      <SectionTitle eyebrow="Representative Project" title="ErumPay: QR 기반 간편결제 서비스">
-        <p className="section-lead">
-          메인에서는 왜 만들었는지, 제가 무엇을 맡았는지, 어떤 문제를 해결했는지만 압축해 보여줍니다.
-          구조 선택, API, ERD, 트러블슈팅은 상세 페이지에서 증명 자료로 풀어갑니다.
-        </p>
+      <SectionTitle eyebrow="Representative Project" title="LINE Creators+">
+        <p className="section-lead">새로운 크리에이터와 캐릭터를 발견하고 LINE 스티커 구매로 응원하는 서비스입니다.</p>
       </SectionTitle>
       <div className="case-layout">
         <article className="case-summary">
           <div className="case-summary-inner">
             <div className="case-summary-brand">
               <div className="case-brand-row">
-                <img src="/projects/erumpay/erumpay-logo.png" alt="ErumPay" />
                 <div className="case-brand-meta">
-                  <span className="award-badge">LG CNS AM Inspire Camp 최종 프로젝트 대상</span>
-                  <p className="project-type">Frontend PL / Backend</p>
+                  <span className="award-badge">IPX · 프론트엔드 인턴</span>
+                  <p className="project-type">LINE MINI App · Next.js · React · TypeScript</p>
                 </div>
               </div>
-              <h3>QR 결제 서비스에서 가맹점 도메인이 책임져야 할 API와 데이터 정합성 방어를 구현했습니다.</h3>
-              <a className="text-link" href="/projects/erumpay/">상세 페이지 보기</a>
+              <h3>2회차 이벤트를 구현하며, 이전 회차의 작가와 콘텐츠도 계속 찾아볼 수 있도록 화면 구조를 바꿨습니다.</h3>
+              <a className="text-link" href="https://creatorsplus.line.me/" target="_blank" rel="noreferrer">공개 서비스 보기</a>
             </div>
             <div className="case-summary-scope">
               <ul className="plain-list">
-                {erumPayScope.map((item) => (
+                {creatorsScope.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -324,19 +313,13 @@ function CaseStudy() {
           </div>
         </article>
         <div className="case-detail evidence-detail">
-          {erumPayEvidence.map((item) => (
-            <article key={item.label}>
-              <p className="step-label">{item.label}</p>
+          {creatorsEvidence.map((item) => (
+            <article key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>
           ))}
         </div>
-      </div>
-      <div className="architecture-strip" aria-label="ErumPay architecture flow">
-        {architecture.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
       </div>
     </section>
   );
@@ -345,9 +328,9 @@ function CaseStudy() {
 function BootcampProjects() {
   return (
     <section id="developmentJourney" className="section bootcamp-section">
-      <SectionTitle eyebrow="development Journey" title="Frontend에서 Backend, MSA 프로젝트로 확장해온 흐름입니다.">
+      <SectionTitle eyebrow="development Journey" title="사용자 화면부터 결제 API까지 구현한 팀 프로젝트입니다.">
         <p className="section-lead">
-          프론트엔드 구현부터 백엔드와 MSA 프로젝트까지 단계적으로 경험을 확장했습니다.
+          AI 면접 플랫폼에서는 사용자 입력과 API 연동을, MyBill과 ErumPay에서는 요청을 처리하는 서버를 경험했습니다.
         </p>
       </SectionTitle>
       <div className="bootcamp-grid">
@@ -360,6 +343,7 @@ function BootcampProjects() {
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <dl className="compact-meta">
+              {project.award && <div><dt>수상</dt><dd>{project.award}</dd></div>}
               <div>
                 <dt>Role</dt>
                 <dd>{project.role}</dd>
@@ -374,7 +358,7 @@ function BootcampProjects() {
                 GitHub 보기
               </a>
             )}
-            {project.link && <a className="text-link" href={project.link}>대표 프로젝트 자세히 보기</a>}
+            {project.link && <a className="text-link" href={project.link}>ErumPay 상세 보기</a>}
           </article>
         ))}
       </div>

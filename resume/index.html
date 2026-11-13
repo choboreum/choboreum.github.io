@@ -87,6 +87,15 @@
             <div class="career-card-list component-flex">
                 <article>
                     <div class="career-card-head">
+                        <span class="logo-box"><img src="./images/pj_ipx.jpg" alt="IPX"></span>
+                        <span class="work-meta">2026.08.18 ~ 현재 · 프론트엔드 인턴</span>
+                        <strong class="career-card-title">IPX · LINE Creators+</strong>
+                    </div>
+                    <p>2회차 이벤트 메인·상세 개발, 회차별 콘텐츠 분리와 화면 회전 E2E 검증</p>
+                    <button type="button" class="text-button" onclick="pjPop('.ipx-creators')" aria-haspopup="dialog">상세 보기</button>
+                </article>
+                <article>
+                    <div class="career-card-head">
                         <span class="logo-box"><img src="./images/pj_mg.png" alt="MG새마을금고"></span>
                         <span class="work-meta">2025.04 ~ 2025.11</span>
                         <strong class="career-card-title">MG새마을금고</strong>
@@ -232,6 +241,27 @@
             </div>
         </section>
     </div> <!-- .wrapper -->
+
+	<div class="popup_pj ipx-creators" role="dialog" aria-labelledby="ipx-title">
+		<button type="button" class="btn-close">닫기</button>
+		<div class="text-container">
+			<div class="popup-thumb"><img src="./images/pj_ipx.jpg" alt="IPX"></div>
+			<div class="tit">
+				<p class="sub">#프론트엔드 #LINE미니앱</p>
+				<p class="popup-title" id="ipx-title">IPX · LINE Creators+</p>
+				<p class="popup-subtitle">크리에이터를 소개하고 LINE 스티커 구매로 응원하는 서비스입니다.</p>
+			</div>
+			<div class="desc">
+				<ul class="desc_list">
+					<li><p>근무 기간</p><span>2026.08.18 ~ 현재 · 프론트엔드 인턴</span></li>
+					<li><p>담당 업무</p><span>2회차 이벤트 메인과 크리에이터 6명의 상세 화면을 구현하고, 목록에서 각 크리에이터의 소속 회차로 연결했습니다.</span></li>
+					<li><p>구조 개선</p><span>홈과 회차 페이지가 공통 화면을 사용하도록 구성하고, FAQ·이미지·상세 경로를 회차별 데이터로 분리했습니다.</span></li>
+					<li><p>테스트</p><span>화면 회전 검사에서 정적 헤더 대신 초기화 후 나타나는 공유 버튼을 기다리도록 대기 조건을 수정했습니다.</span></li>
+					<li><p>사용 기술</p><span>Next.js, React, TypeScript, Playwright</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 	<div class="popup_pj mg-bank">
 		<button type="button" class="btn-close">닫기</button>

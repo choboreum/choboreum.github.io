@@ -552,7 +552,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: auto 0 0;
+    margin: 0;
     padding-top: 24px;
 }
 
